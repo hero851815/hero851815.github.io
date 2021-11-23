@@ -1,7 +1,0 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>开发语言 - 分类 - My Blog</title>
-        <link>https://hero851815.gitee.io/categories/language/</link>
-        <description>开发语言 - 分类 - My Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><atom:link href="https://hero851815.gitee.io/categories/language/" rel="self" type="application/rss+xml" /></channel>
-</rss>
