@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>sql server - 标签 - My Blog</title>
+        <link>https://hero851815.gitee.io/tags/sql-server/</link>
+        <description>sql server - 标签 - My Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 08 Nov 2021 11:19:00 &#43;0800</lastBuildDate><atom:link href="https://hero851815.gitee.io/tags/sql-server/" rel="self" type="application/rss+xml" /><item>
+    <title>SQL SERVER</title>
+    <link>https://hero851815.gitee.io/sqlserver/</link>
+    <pubDate>Mon, 08 Nov 2021 11:19:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hero851815.gitee.io/sqlserver/</guid>
+    <description><![CDATA[数据库备份 完整备份作业 1 2 3 4 5 6 7 8 9 USEMasterGOdeclare@strvarchar(100)set@str=&#39;D:\DataBase\FullBak-shi15-&#39;+replace(replace(replace(convert(varchar,getdate(),20),&#39;-&#39;,&#39;&#39;),&#39; &#39;,&#39;&#39;),&#39;:&#39;,&#39;&#39;)+&#39;.b]]></description>
+</item></channel>
+</rss>

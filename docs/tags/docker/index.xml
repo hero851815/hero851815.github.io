@@ -1,0 +1,25 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>docker - 标签 - My Blog</title>
+        <link>https://hero851815.gitee.io/tags/docker/</link>
+        <description>docker - 标签 - My Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 07 Nov 2021 17:30:00 &#43;0800</lastBuildDate><atom:link href="https://hero851815.gitee.io/tags/docker/" rel="self" type="application/rss+xml" /><item>
+    <title>Docker</title>
+    <link>https://hero851815.gitee.io/docker/</link>
+    <pubDate>Sun, 07 Nov 2021 17:30:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hero851815.gitee.io/docker/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/featuredImage/docker-featured-image.png" referrerpolicy="no-referrer">
+            </div>1 Docker安装 安装存储库 sudo yum install -y yum-utils device-mapper-persistent-data lvm2 若sudo命令无法执行则运行 yum -y install yum-utils 配置Docker源 yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo 查看仓库中Docker版本 yum list docker-ce --showduplicates | sort]]></description>
+</item><item>
+    <title>Nginx</title>
+    <link>https://hero851815.gitee.io/nginx/</link>
+    <pubDate>Sun, 07 Nov 2021 17:30:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hero851815.gitee.io/nginx/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/featuredImage/nginx-featured-image.jpg" referrerpolicy="no-referrer">
+            </div>安装扩展插件 apt-get update apt-get install vim 1 安装nginx(容器方式) 拉取镜像 docker pull nginx:1.21.1 查看本地镜像 docker image 首次创建ngixn容器 docker run -d --name nginx-web nginx 创建nginx目录 1 2 3 mkdir]]></description>
+</item></channel>
+</rss>

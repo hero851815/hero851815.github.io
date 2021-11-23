@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Oracle - My Blog</title><meta name="Description" content="oracle"><meta property="og:title" content="Oracle" />
+<meta property="og:description" content="oracle" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hero851815.gitee.io/oracle/" /><meta property="og:image" content="https://hero851815.gitee.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-11-07T17:30:00+08:00" />
+<meta property="article:modified_time" content="2021-11-07T17:30:00+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hero851815.gitee.io/logo.png"/>
+
+<meta name="twitter:title" content="Oracle"/>
+<meta name="twitter:description" content="oracle"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hero851815.gitee.io/oracle/" /><link rel="next" href="https://hero851815.gitee.io/nginx/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Oracle",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hero851815.gitee.io\/oracle\/"
+        },"genre": "posts","keywords": "oracle","wordcount":  1341 ,
+        "url": "https:\/\/hero851815.gitee.io\/oracle\/","datePublished": "2021-11-07T17:30:00+08:00","dateModified": "2021-11-07T17:30:00+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "hero851815"
+            },"description": "oracle"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="My Blog">Hugo Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/documentation"> 文档 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="My Blog">Hugo Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/documentation" title="">文档</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Oracle</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hero851815</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/database/"><i class="far fa-folder fa-fw"></i>数据库</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-11-07">2021-11-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1341 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#异常">异常</a>
+      <ul>
+        <li><a href="#查询死锁">查询死锁</a></li>
+        <li><a href="#查询连接数和session">查询连接数和session</a></li>
+        <li><a href="#查询表空间">查询表空间</a></li>
+        <li><a href="#分析表">分析表</a></li>
+        <li><a href="#分析索引">分析索引</a></li>
+        <li><a href="#定期清理空闲会话">定期清理空闲会话</a></li>
+      </ul>
+    </li>
+    <li><a href="#表空间和用户">表空间和用户</a>
+      <ul>
+        <li><a href="#创建表空间和用户">创建表空间和用户</a></li>
+        <li><a href="#用户创建修改删除权限">用户创建,修改,删除,权限</a></li>
+        <li><a href="#导出数据库">导出数据库</a></li>
+        <li><a href="#导入数据库">导入数据库</a></li>
+        <li><a href="#查看用户权限">查看用户权限</a></li>
+        <li><a href="#sqlplus">SQLPLUS</a></li>
+      </ul>
+    </li>
+    <li><a href="#表">表</a>
+      <ul>
+        <li><a href="#创建表">创建表</a></li>
+        <li><a href="#查询sequence">查询sequence</a></li>
+        <li><a href="#创建索引">创建索引</a></li>
+      </ul>
+    </li>
+    <li><a href="#dblink">DBLINK</a>
+      <ul>
+        <li><a href="#创建及删除dblink">创建及删除dblink</a></li>
+        <li><a href="#查询dblink">查询dblink</a></li>
+      </ul>
+    </li>
+    <li><a href="#job">JOB</a>
+      <ul>
+        <li><a href="#创建job">创建job</a></li>
+        <li><a href="#查询job">查询job</a></li>
+        <li><a href="#修改job间隔">修改job间隔</a></li>
+        <li><a href="#运行停止删除job">运行,停止,删除job</a></li>
+      </ul>
+    </li>
+    <li><a href="#执行">执行</a>
+      <ul>
+        <li><a href="#运行存储过程带参数">运行存储过程带参数</a></li>
+        <li><a href="#查删重复数据">查,删重复数据</a></li>
+      </ul>
+    </li>
+    <li><a href="#docker">Docker</a>
+      <ul>
+        <li><a href="#docker中数据备份">docker中数据备份</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="异常">异常</h2>
+<h3 id="查询死锁">查询死锁</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">select</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">session_id</span><span class="w"> </span><span class="n">sid</span><span class="p">,</span><span class="w"> 
+</span><span class="w">       </span><span class="n">s</span><span class="p">.</span><span class="nb">serial</span><span class="o">#</span><span class="p">,</span><span class="w"> 
+</span><span class="w">       </span><span class="n">l</span><span class="p">.</span><span class="n">locked_mode</span><span class="p">,</span><span class="w"> 
+</span><span class="w">       </span><span class="n">l</span><span class="p">.</span><span class="n">oracle_username</span><span class="p">,</span><span class="w"> 
+</span><span class="w">       </span><span class="n">s</span><span class="p">.</span><span class="k">user</span><span class="o">#</span><span class="p">,</span><span class="w"> 
+</span><span class="w">       </span><span class="n">l</span><span class="p">.</span><span class="n">os_user_name</span><span class="p">,</span><span class="w"> 
+</span><span class="w">       </span><span class="n">s</span><span class="p">.</span><span class="n">machine</span><span class="p">,</span><span class="w"> 
+</span><span class="w">       </span><span class="n">s</span><span class="p">.</span><span class="n">terminal</span><span class="p">,</span><span class="w"> 
+</span><span class="w">       </span><span class="n">a</span><span class="p">.</span><span class="n">sql_text</span><span class="p">,</span><span class="w"> 
+</span><span class="w">       </span><span class="n">a</span><span class="p">.</span><span class="n">action</span><span class="w"> 
+</span><span class="w">  </span><span class="k">from</span><span class="w"> </span><span class="n">v$sqlarea</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">v$session</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">v$locked_object</span><span class="w"> </span><span class="n">l</span><span class="w"> 
+</span><span class="w"></span><span class="k">where</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">session_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">sid</span><span class="w"> 
+</span><span class="w">   </span><span class="k">and</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">prev_sql_addr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">address</span><span class="w"> 
+</span><span class="w"></span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">sid</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="nb">serial</span><span class="o">#</span><span class="p">;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">select</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">sid</span><span class="p">,</span><span class="n">spid</span><span class="p">,</span><span class="n">status</span><span class="p">,</span><span class="n">substr</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">program</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">40</span><span class="p">)</span><span class="w"> </span><span class="n">prog</span><span class="p">,</span><span class="n">a</span><span class="p">.</span><span class="n">terminal</span><span class="p">,</span><span class="n">osuser</span><span class="p">,</span><span class="n">value</span><span class="o">/</span><span class="mi">60</span><span class="o">/</span><span class="mi">100</span><span class="w"> </span><span class="n">value</span><span class="w">
+</span><span class="w"></span><span class="k">from</span><span class="w"> </span><span class="n">v$session</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="n">v$process</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="n">v$sesstat</span><span class="w"> </span><span class="k">c</span><span class="w">
+</span><span class="w"></span><span class="k">where</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">statistic</span><span class="o">#=</span><span class="mi">12</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">sid</span><span class="o">=</span><span class="n">a</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">paddr</span><span class="o">=</span><span class="n">b</span><span class="p">.</span><span class="n">addr</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="k">desc</span><span class="p">;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">SID</span><span class="p">,</span><span class="w"> </span><span class="nb">SERIAL</span><span class="o">#</span><span class="p">,</span><span class="w"> </span><span class="n">INST_ID</span><span class="p">,</span><span class="w"> </span><span class="n">MODULE</span><span class="p">,</span><span class="n">STATUS</span><span class="p">,</span><span class="n">S</span><span class="p">.</span><span class="n">LAST_CALL_ET</span><span class="w">
+</span><span class="w">   </span><span class="k">FROM</span><span class="w"> </span><span class="n">gv$session</span><span class="w"> </span><span class="n">S</span><span class="w">
+</span><span class="w">   </span><span class="k">WHERE</span><span class="w"> </span><span class="n">S</span><span class="p">.</span><span class="n">USERNAME</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w">
+</span><span class="w">   </span><span class="k">AND</span><span class="w"> </span><span class="k">UPPER</span><span class="p">(</span><span class="n">S</span><span class="p">.</span><span class="n">PROGRAM</span><span class="p">)</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;TOAD.EXE&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;W3WP.EXE&#39;</span><span class="p">)</span><span class="w">
+</span><span class="w">   </span><span class="c1">--AND S.LAST_CALL_ET &gt;= 2 * 60*60
+</span><span class="c1"></span><span class="w">   </span><span class="k">AND</span><span class="w"> </span><span class="n">S</span><span class="p">.</span><span class="n">STATUS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;INACTIVE&#39;</span><span class="w">
+</span><span class="w">   </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">S</span><span class="p">.</span><span class="n">LAST_CALL_ET</span><span class="w"> </span><span class="k">DESC</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="查询连接数和session">查询连接数和session</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">select</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">v$process</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">select</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">v$session</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">v$resource_limit</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="查询表空间">查询表空间</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">SELECT</span><span class="w"> </span><span class="n">segment_name</span><span class="p">,</span><span class="w"> </span><span class="n">segment_type</span><span class="p">,</span><span class="w"> </span><span class="n">blocks</span><span class="w">
+</span><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">dba_segments</span><span class="w">
+</span><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="n">segment_name</span><span class="o">=</span><span class="s1">&#39;TDB073&#39;</span><span class="p">;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">blocks</span><span class="p">,</span><span class="w"> </span><span class="n">empty_blocks</span><span class="p">,</span><span class="w"> </span><span class="n">num_rows</span><span class="w">
+</span><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">user_tables</span><span class="w">
+</span><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;TDB073&#39;</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="分析表">分析表</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">begin</span><span class="w">
+</span><span class="w"></span><span class="n">dbms_stats</span><span class="p">.</span><span class="n">gather_table_stats</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span><span class="w">  </span><span class="n">ownname</span><span class="w">          </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">&#39;TEST&#39;</span><span class="p">,</span><span class="w">
+</span><span class="w">  </span><span class="n">tabname</span><span class="w">          </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">&#39;STUDENT&#39;</span><span class="p">,</span><span class="w">
+</span><span class="w">  </span><span class="n">estimate_percent</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">dbms_stats</span><span class="p">.</span><span class="n">AUTO_SAMPLE_SIZE</span><span class="p">,</span><span class="w">
+</span><span class="w">  </span><span class="n">degree</span><span class="w">           </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+</span><span class="w">  </span><span class="k">cascade</span><span class="w">          </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">TRUE</span><span class="p">);</span><span class="w">
+</span><span class="w"></span><span class="k">end</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="分析索引">分析索引</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">begin</span><span class="w">
+</span><span class="w"></span><span class="n">dbms_stats</span><span class="p">.</span><span class="n">gather_index_stats</span><span class="p">(</span><span class="w">
+</span><span class="w">  </span><span class="n">ownname</span><span class="w">          </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">&#39;TEST&#39;</span><span class="p">,</span><span class="w">
+</span><span class="w">  </span><span class="n">indname</span><span class="w">          </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">&#39;IDX_STUDENT_BIRTH&#39;</span><span class="p">,</span><span class="w">
+</span><span class="w">  </span><span class="n">estimate_percent</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">dbms_stats</span><span class="p">.</span><span class="n">AUTO_SAMPLE_SIZE</span><span class="p">,</span><span class="w">
+</span><span class="w">  </span><span class="n">degree</span><span class="w">           </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w">
+</span><span class="w"></span><span class="k">end</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="定期清理空闲会话">定期清理空闲会话</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">CREATE OR REPLACE PROCEDURE DB_KILL_IDLE_CLIENTS AUTHID DEFINER AS
+   job_no number;
+   num_of_kills number := 0;
+
+BEGIN
+
+  FOR REC IN
+  (
+     SELECT SID, SERIAL#,MODULE, STATUS
+    FROM V$SESSION S
+    WHERE S.USERNAME IS NOT NULL
+    AND UPPER(S.PROGRAM) IN (&#39;TOAD.EXE&#39;, &#39;W3WP.EXE&#39;)
+    AND S.LAST_CALL_ET &gt;= 60*60
+    AND S.STATUS = &#39;INACTIVE&#39;
+    ORDER BY SID DESC
+   ) LOOP
+   ---------------------------------------------------------------------------
+   -- kill inactive sessions immediately
+   ---------------------------------------------------------------------------
+   DBMS_OUTPUT.PUT(&#39;LOCAL SID &#39; || rec.sid || &#39;(&#39; || rec.module || &#39;)&#39;);
+   execute immediate &#39;alter system disconnect session &#39;&#39;&#39; || rec.sid || &#39;, &#39; ||
+      rec.serial# || &#39;&#39;&#39;immediate&#39; ;
+
+  DBMS_OUTPUT.PUT_LINE(&#39;. killed locally &#39; || job_no);
+  num_of_kills := num_of_kills + 1;
+  END LOOP;
+
+   DBMS_OUTPUT.PUT_LINE (&#39;Number of killed system sessions: &#39; || num_of_kills);
+END DB_KILL_IDLE_CLIENTS;
+
+
+------ alter system disconnect session &#39;316,2379&#39; immediate
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="表空间和用户">表空间和用户</h2>
+<h3 id="创建表空间和用户">创建表空间和用户</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">create</span><span class="w"> </span><span class="n">tablespace</span><span class="w"> </span><span class="n">BLDS</span><span class="w"> </span><span class="n">logging</span><span class="w">
+</span><span class="w"></span><span class="n">datafile</span><span class="w"> </span><span class="s1">&#39;C:\app\Administrator\oradata\BLDS\BLDS.dbf&#39;</span><span class="w">
+</span><span class="w"></span><span class="k">size</span><span class="w"> </span><span class="mi">1024</span><span class="n">m</span><span class="w">
+</span><span class="w"></span><span class="n">autoextend</span><span class="w"> </span><span class="k">on</span><span class="w">
+</span><span class="w"></span><span class="k">next</span><span class="w"> </span><span class="mi">1024</span><span class="n">m</span><span class="w">
+</span><span class="w"></span><span class="n">maxsize</span><span class="w"> </span><span class="mi">2048</span><span class="n">m</span><span class="w">
+</span><span class="w"></span><span class="n">extent</span><span class="w"> </span><span class="n">management</span><span class="w"> </span><span class="k">local</span><span class="p">;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">drop</span><span class="w"> </span><span class="n">tablespace</span><span class="w"> </span><span class="err">表空间名称</span><span class="w"> </span><span class="k">including</span><span class="w"> </span><span class="n">contents</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">datafiles</span><span class="w"> </span><span class="k">cascade</span><span class="w"> </span><span class="k">constraint</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="用户创建修改删除权限">用户创建,修改,删除,权限</h3>
+<p><code>create user 用户名 identified by 口令[即密码] default tablespace 表空间;</code>
+<code>alter user 用户名 identified by 口令[改变的口令];</code>
+<code>drop user 用户名 cascade;	--加了cascade就可以把用户连带的数据全部删掉</code>
+<code>GRANT CONNECT,RESOURCE TO 用户名; (GRANT DBA TO ..)</code>
+<code>REVOKE CONNECT,RESOURCE FROM 用户名;</code></p>
+<h3 id="导出数据库">导出数据库</h3>
+<p><code>exp BLDS/BLDS@127.0.0.1:1521/orcl file='C:/Database/blds20190916.dmp'</code></p>
+<h3 id="导入数据库">导入数据库</h3>
+<p>cmd中 <code>imp BLDS/BLDS@BLDS file='d:/back/BLDS2018-10-24.dmp' full=y ignore=y</code></p>
+<h3 id="查看用户权限">查看用户权限</h3>
+<p><code>select * from DBA_SYS_PRIVS where grantee='BLDS'</code></p>
+<h3 id="sqlplus">SQLPLUS</h3>
+<p><code>sqlplus / as sysdba</code></p>
+<hr>
+<h2 id="表">表</h2>
+<h3 id="创建表">创建表</h3>
+<p><strong>Create table</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">TDB001_EX_TMP</span><span class="w">
+</span><span class="w"></span><span class="p">(</span><span class="w">
+</span><span class="w">  </span><span class="n">table_id</span><span class="w">        </span><span class="nb">NUMBER</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w">
+</span><span class="w">  </span><span class="n">customerid</span><span class="w">      </span><span class="n">VARCHAR2</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w">
+</span><span class="w">  </span><span class="n">warehouseid</span><span class="w">     </span><span class="n">VARCHAR2</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w">
+</span><span class="w">  </span><span class="n">happen_day</span><span class="w">      </span><span class="nb">DATE</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w">
+</span><span class="w">  </span><span class="n">sku</span><span class="w">             </span><span class="n">VARCHAR2</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w">
+</span><span class="w">  </span><span class="n">sku_type</span><span class="w">        </span><span class="n">VARCHAR2</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span><span class="w">
+</span><span class="w">  </span><span class="n">qty</span><span class="w">             </span><span class="nb">NUMBER</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span><span class="w">
+</span><span class="w">  </span><span class="n">transfer_status</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w">
+</span><span class="w">  </span><span class="n">main_dist</span><span class="w">       </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w">
+</span><span class="w">  </span><span class="n">made_time</span><span class="w">       </span><span class="nb">DATE</span><span class="p">,</span><span class="w">
+</span><span class="w">  </span><span class="n">maker</span><span class="w">           </span><span class="n">VARCHAR2</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="w">
+</span><span class="w">  </span><span class="n">update_time</span><span class="w">     </span><span class="nb">DATE</span><span class="p">,</span><span class="w">
+</span><span class="w">  </span><span class="n">updater</span><span class="w">         </span><span class="n">VARCHAR2</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="w">
+</span><span class="w">  </span><span class="n">qty_undo</span><span class="w">        </span><span class="nb">NUMBER</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span><span class="w">
+</span><span class="w">  </span><span class="n">qty_available</span><span class="w">   </span><span class="nb">NUMBER</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span><span class="w">
+</span><span class="w">  </span><span class="n">qty_transmit</span><span class="w">    </span><span class="nb">NUMBER</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span><span class="w">
+</span><span class="w">  </span><span class="n">mq_status</span><span class="w">       </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w">
+</span><span class="w">  </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="n">table_id</span><span class="p">)</span><span class="w">
+</span><span class="w"></span><span class="p">)</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Create sequence</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="n">sequence</span><span class="w"> </span><span class="n">TDB001_EX_TMP_SEQUENCE</span><span class="w">
+</span><span class="w">     </span><span class="k">minvalue</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="w">     </span><span class="k">maxvalue</span><span class="w"> </span><span class="mi">9999999999999999999999999999</span><span class="w">
+</span><span class="w">     </span><span class="cm">/*NOMAXVALUE*/</span><span class="w">
+</span><span class="w">     </span><span class="k">start</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="w">     </span><span class="k">increment</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="w">     </span><span class="n">nocache</span><span class="p">;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="c1">--表字段默认值 sku varchar2(20) default &#39;123456&#39; not null,
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="查询sequence">查询sequence</h3>
+<p><code>select * from user_sequences</code></p>
+<h3 id="创建索引">创建索引</h3>
+<p><code>create index I_TDB073_O on TDB073(trim(orderno)) online;</code>
+<code>create index I_TDB076_ODS on TDB076 (trim(ORDERNO), trim(DELIVERYNO),  STATUS_CODE) online;</code></p>
+<h2 id="dblink">DBLINK</h2>
+<h3 id="创建及删除dblink">创建及删除dblink</h3>
+<p><code>grant create  database link to user; --只有user用户能使用的dblink</code>
+<code>grant create public  database link to user;--所有用户都可以使用的dblink</code>
+<code>grant drop public  database link to user;	--删除dblink的权限</code>
+<code>drop public  database link linkname;</code>
+<code>create public database link orcl_remote connect to BLDS identified by BLDS USING 'orcl_101.132.35.49'; --创建dblink</code></p>
+<h3 id="查询dblink">查询dblink</h3>
+<p><code>select owner,object_name from dba_objects where object_type='DATABASE LINK';</code></p>
+<hr>
+<h2 id="job">JOB</h2>
+<h3 id="创建job">创建job</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">declare</span><span class="w">   
+</span><span class="w"></span><span class="n">job</span><span class="w"> </span><span class="nb">number</span><span class="p">;</span><span class="w">      
+</span><span class="w"></span><span class="k">begin</span><span class="w">
+</span><span class="w"></span><span class="n">sys</span><span class="p">.</span><span class="n">dbms_job</span><span class="p">.</span><span class="n">submit</span><span class="p">(</span><span class="n">job</span><span class="p">,</span><span class="s1">&#39;SP_S101_1003;&#39;</span><span class="p">,</span><span class="n">sysdate</span><span class="p">,</span><span class="s1">&#39;sysdate+5/(24*60)&#39;</span><span class="p">);</span><span class="w">
+</span><span class="w"></span><span class="k">end</span><span class="p">;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">declare</span><span class="w">   
+</span><span class="w"></span><span class="n">job</span><span class="w"> </span><span class="nb">number</span><span class="p">;</span><span class="w">     
+</span><span class="w"></span><span class="k">begin</span><span class="w">
+</span><span class="w"></span><span class="n">sys</span><span class="p">.</span><span class="n">dbms_job</span><span class="p">.</span><span class="n">submit</span><span class="p">(</span><span class="n">job</span><span class="p">,</span><span class="w">
+</span><span class="w">   </span><span class="s1">&#39;declare s1 varchar(1000); begin SP_HAR101(s1); end;&#39;</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="n">sysdate</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="s1">&#39;sysdate+3/(24*60)&#39;</span><span class="p">);</span><span class="w">
+</span><span class="w"></span><span class="k">end</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="查询job">查询job</h3>
+<p>SELECT * FROM DBA_JOBS; 
+select * from all_jobs;
+select job,
+log_user,
+to_char(last_date,&lsquo;yyyy-mm-dd hh24:mi:ss&rsquo;) last_date,
+to_char(next_date,&lsquo;yyyy-mm-dd hh24:mi:ss&rsquo;) next_date,
+interval,
+what
+from user_jobs</p>
+<h3 id="修改job间隔">修改job间隔</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">begin</span><span class="w">
+</span><span class="w">  </span><span class="n">dbms_job</span><span class="p">.</span><span class="nb">interval</span><span class="p">(</span><span class="mi">103</span><span class="p">,</span><span class="s1">&#39;sysdate+15/(24*60)&#39;</span><span class="p">);</span><span class="w">
+</span><span class="w">  </span><span class="k">commit</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">end</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="运行停止删除job">运行,停止,删除job</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">begin</span><span class="w">
+</span><span class="w"></span><span class="c1">--dbms_job.run(44); --启动JOB
+</span><span class="c1"></span><span class="n">dbms_job</span><span class="p">.</span><span class="n">broken</span><span class="p">(</span><span class="mi">44</span><span class="p">,</span><span class="k">true</span><span class="p">,</span><span class="n">sysdate</span><span class="p">);</span><span class="w"> </span><span class="c1">--停止JOB
+</span><span class="c1"></span><span class="k">end</span><span class="p">;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">begin</span><span class="w">
+</span><span class="w"> </span><span class="n">dbms_job</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">23</span><span class="p">);</span><span class="w">
+</span><span class="w"></span><span class="k">end</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="执行">执行</h2>
+<h3 id="运行存储过程带参数">运行存储过程带参数</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">declare</span><span class="w">
+</span><span class="w">       </span><span class="n">v_result</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w">
+</span><span class="w">     </span><span class="k">begin</span><span class="w">
+</span><span class="w">       </span><span class="n">SP_HAR101</span><span class="p">(</span><span class="n">v_result</span><span class="p">);</span><span class="w">
+</span><span class="w">       </span><span class="k">end</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="查删重复数据">查,删重复数据</h3>
+<ul>
+<li>
+<p>查找表中多余的重复记录（多个字段）
+<code>select * from 表 a where (a.Id,a.seq) in (select Id,seq from 表 group by Id,seq having count(*) &gt; 1)</code></p>
+</li>
+<li>
+<p>删除表中多余的重复记录（多个字段），只留有rowid最小的记录
+<code>delete from 表 a where (a.Id,a.seq) in (select Id,seq from 表 group by Id,seq having count(*) &gt; 1) and rowid not in (select min(rowid) from 表 group by Id,seq having count(*)&gt;1)</code></p>
+</li>
+</ul>
+<hr>
+<h2 id="docker">Docker</h2>
+<h3 id="docker中数据备份">docker中数据备份</h3>
+<ol>
+<li><code>docker exec -it &lt;container_id&gt; /bin/bash</code></li>
+<li><code>exp account/password@tnsName file=/u01/app/oracle/file.dmp log=/u01/app/oracle/file.log</code></li>
+</ol>
+<blockquote>
+<p>exp 服务器A上数据库账号/密码@本地服务器B配置的tnsnames.ora内的name file=导出路径（此处为Oracle容器内相对路径） log=日志路径（相对路径+1） full=数据库完全导出</p>
+</blockquote>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-11-07</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/oracle/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/oracle/">oracle</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/nginx/" class="next" rel="next" title="Nginx">Nginx<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.89.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">hero851815</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
