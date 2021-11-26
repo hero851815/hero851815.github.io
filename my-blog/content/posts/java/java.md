@@ -45,3 +45,44 @@ Lambda表达式，只能是接口的创建，并且这个接口只能包含一�
 ### #和$的区别
 + #{} 防止SQL注入，它会将所有传入的参数作为一个字符串来处理
 + ${} 将传入的参数拼接到SQL上去执行，一般用于表名和字段名参数
+
+### mybatis-plus配置mapper
+`pom.xml`中引入依赖，配置mapper.xml路径
+```xml
+<dependency>
+    <groupId>com.baomidou</groupId>
+    <artifactId>mybatis-plus-boot-starter</artifactId>
+    <version>3.4.1</version>
+</dependency>
+```
+```xml
+<build>
+  <resources>
+      <resource>
+          <directory>src/main/java</directory>
+          <includes>
+              <include>**/*.xml</include>
+          </includes>
+      </resource>
+      <!--指定资源的位置-->
+      <resource>
+          <directory>src/main/resources</directory>
+      </resource>
+  </resources>
+</build>
+```
+
+`application.yml`配置mybatis-plus
+```yml
+mybatis-plus:
+  mapper-locations: classpath*:com/example/demo/mapper/xml/*Mapper.xml
+```
+
+*Mapper.xml格式
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.UserMapper">
+
+</mapper>
+```
