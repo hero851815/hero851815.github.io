@@ -9,6 +9,6 @@
     <pubDate>Thu, 18 Nov 2021 15:23:00 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://hero851815.gitee.io/java/</guid>
-    <description><![CDATA[工程项目 组件中选择Java，生成工程 Maven 右键工程创建Maven项目，编辑pom.xml加载第三方依赖 resources 在resources目录下创建appli]]></description>
+    <description><![CDATA[工程项目 Maven 右键工程创建Maven项目，编辑pom.xml加载第三方依赖 在resources目录下创建application.yml，建议用y]]></description>
 </item></channel>
 </rss>
