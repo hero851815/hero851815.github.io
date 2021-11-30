@@ -17,31 +17,32 @@ toc:
   auto: false
 ---
 
-## 查看系统event事件开关
-### 方法一
+## 系统event
+### 查看系统event事件开关
+#### 方法一
 `select @@event_scheduler;`
 
-### 方法二
+#### 方法二
 `show variables like 'event_scheduler';`
 
 
 ### 开启系统event事件开关
--- 方法1
+#### 方法1
 set GLOBAL event_scheduler=ON;
 
--- 方法2
+#### 方法2
 set GLOBAL event_scheduler=1;
 
 
 ### 查看系统event事件
-### 方法一
+#### 方法一
 `select * from mysql.event;`
  
-### 方法二
+#### 方法二
 `SELECT * FROM information_schema.events;`
 
 
-### 备份/还原数据库
+## 备份/还原数据库
 设置数据库sql_mode，在**mysqld**中添加`sql_mode='STRICT_ALL_TABLES,NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER'`  
 创建用户并且授权  
 `CREATE USER 'dog'@'localhost' IDENTIFIED BY '123456';`  
@@ -55,7 +56,7 @@ set GLOBAL event_scheduler=1;
 3. `source c:\db.sql`
 
 
-### 创建语法
+## 创建语法
 ```sql
 CREATE 
     [DEFINER = { user | CURRENT_USER }] --一般不写
@@ -87,6 +88,7 @@ CREATE
 			  
 ___
 
+## 实例
 ### 实例1
 #### 将repair库中的fa_repair_list表根据id转移至新表
 创建存储过程backupRepairList
@@ -238,7 +240,7 @@ docker run -p 3308:3306 --name mysql \
 6. 修改SQL_MODE：`set @@sql_mode='STRICT_ALL_TABLES,NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER';`
 
 #### 安装插件
-###### 密码策略插件
+##### 密码策略插件
 拷贝validate_password.dll至lib/plugin目录  
 
 在my.ini[mysqld]模块中中添加以下参数，重启服务  
@@ -247,7 +249,7 @@ early-plugin-load="validate_password.dll"
 validate-password = FORCE_PLUS_PERMANENT
 ```
 
-###### 登录失败插件
+##### 登录失败插件
 windows使用.dll,linux使用.so
 
 `INSTALL PLUGIN CONNECTION_CONTROL SONAME 'connection_control.dll';`

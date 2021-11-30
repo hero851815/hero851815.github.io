@@ -55,7 +55,7 @@
     <pubDate>Mon, 08 Nov 2021 11:19:00 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://hero851815.gitee.io/mysql/</guid>
-    <description><![CDATA[查看系统event事件开关 方法一 select @@event_scheduler; 方法二 show variables like 'event_scheduler'; 开启系统event事件开关 &ndash; 方法1 set GLOBAL event_scheduler=ON; &ndash; 方法2 set GLOBAL event_scheduler=1; 查看系统event事件 方法一 select * from mysql.event;]]></description>
+    <description><![CDATA[系统event 查看系统event事件开关 方法一 select @@event_scheduler; 方法二 show variables like 'event_scheduler'; 开启系统event事件开关 方法1 set GLOBAL event_scheduler=ON; 方法2 set GLOBAL event_scheduler=1; 查看系统event事件 方法]]></description>
 </item><item>
     <title>SQL SERVER</title>
     <link>https://hero851815.gitee.io/sqlserver/</link>
