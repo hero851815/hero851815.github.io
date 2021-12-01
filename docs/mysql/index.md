@@ -200,28 +200,53 @@ docker run -p 3308:3306 --name mysql \
 
 ### 压缩包安装
 #### Linux
-1. 将mysql-5.7.31-linux-glibc2.12-x86_64.tar文件上传至/usr/local目录
-2. 解压 tar -zxvf mysql-5.7.31-linux-glibc2.12-x86_64.tar
-3. 创建mysql用户组和用户并修改权限  
-`groupadd mysql`
++ 1.将mysql-5.7.31-linux-glibc2.12-x86_64.tar文件上传至/opt目录
++ 2.解压 tar -zxvf mysql-5.7.31-linux-glibc2.12-x86_64.tar 并重命名为mysql
++ 3.创建mysql用户组和用户并修改权限  
+`groupadd mysql`  
 `useradd -r -g mysql mysql`
-4. 创建数据目录并赋予权限  
-`mkdir -p /data/mysql`
-`chown mysql:mysql -R /data/mysql`
-5. 进入/usr/local/mysql目录，初始化mysql  
-`bin/mysqld --initialize --user=mysql --basedir=/usr/local/mysql --datadir=/data/mysql`
-6. 将mysql.server放置到/etc/init.d/mysql中  
-`cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysql`
-7. 启动 `service mysql start`
++ 4.创建数据目录并赋予权限  
+`mkdir -p /data/mysql`  
+`chown mysql:mysql -R /data/mysql`   
++ 5.进入/opt/mysql目录，初始化mysql  
+`bin/mysqld --initialize --user=mysql --basedir=/opt/mysql --datadir=/opt/mysql/data`  
++ 6.编辑my.cnf `vim /etc/my.cnf`  
+  ```yml
+  [mysqld]
+  datadir=/opt/mysql/data
+  basedir=/opt/mysql
+  socket=/tmp/mysql.sock
+  user=mysql
+  port=3306
+  character-set-server=utf8
+
+  symbolic-links=0
+  # 取消密码验证
+  # skip-grant-tables 
+  # 表名不区分大小写
+  lower_case_table_names=1 
+
+  [mysqld_safe]
+  log-error=/var/log/mysql.log
+  pid-file=/var/run/mysqld/mysqld.pid
+  ```
++ 7.将mysql.server放置到/etc/init.d/mysql中  
+`cp /opt/mysql/support-files/mysql.server /etc/init.d/mysql`
++ 8.启动服务 `service mysql start`
++ 9.设置开机启动（可选） `chkconfig --add mysql`
++ 10.配置环境变量（可选）`vim /etc/profile`  
+  在PATH中添加路径 `export PATH=$PATH:/opt/mysql/bin`  
+  `source /etc/profile`使其立即生效
+
 
 #### Windows
-1. `mysqld --initialize --console`  
-2. `mysqld install 服务名`
-3. `net start 服务名`
-4. 首次更换密码(使用初始化时显示的密码登录)：`alter user 'root'@'localhost' identified by '123456';`
-5. 修改密码：`update user set authentication_string=password("123456") where user="root";`
-5. `flush privileges;`
-6. 修改SQL_MODE：`set @@sql_mode='STRICT_ALL_TABLES,NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER';`
++ 1. `mysqld --initialize --console`  
++ 2. `mysqld install 服务名`
++ 3. `net start 服务名`
++ 4. 首次更换密码(使用初始化时显示的密码登录)：`alter user 'root'@'localhost' identified by '123456';`
++ 5. 修改密码：`update user set authentication_string=password("123456") where user="root";`
++ 6. `flush privileges;`
++ 7. 修改SQL_MODE：`set @@sql_mode='STRICT_ALL_TABLES,NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER';`
 
 #### 安装插件
 ##### 密码策略插件
