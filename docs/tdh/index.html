@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hero851815.gitee.io\/tdh\/"
-        },"genre": "posts","keywords": "tdh","wordcount":  366 ,
+        },"genre": "posts","keywords": "tdh","wordcount":  1469 ,
         "url": "https:\/\/hero851815.gitee.io\/tdh\/","datePublished": "2021-12-01T15:50:00+08:00","dateModified": "2021-12-01T15:50:00+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">星环TDH 笔记</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hero851815</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>文档</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-12-01">2021-12-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 366 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-12-01">2021-12-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1469 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -115,18 +115,25 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#1-基础概念">1 基础概念</a>
+    <li><a href="#基础概念">基础概念</a>
       <ul>
-        <li><a href="#服务">服务</a></li>
+        <li><a href="#tdh服务">TDH服务</a></li>
+        <li><a href="#数仓">数仓</a></li>
       </ul>
     </li>
-    <li><a href="#2-安装">2 安装</a>
+    <li><a href="#安装">安装</a>
       <ul>
         <li><a href="#环境描述">环境描述</a></li>
       </ul>
     </li>
-    <li><a href="#3-配置">3 配置</a></li>
-    <li><a href="#to-be-continued">to be continued</a></li>
+    <li><a href="#配置">配置</a></li>
+    <li><a href="#数据流转场景">数据流转场景</a>
+      <ul>
+        <li><a href="#t1方式数据流转">T+1方式数据流转</a></li>
+        <li><a href="#准实时数据流转">准实时数据流转</a></li>
+        <li><a href="#实时流处理">实时流处理</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><div class="details admonition info open">
@@ -137,8 +144,8 @@
             <div class="admonition-content">Transwarp Data Hub是基于Hadoop技术架构产生的大数据平台</div>
         </div>
     </div>
-<p><strong>TDH架构图</strong>
-<figure><a class="lightgallery" href="/images/tdh_architecture_diagram.png" title="架构图" data-thumbnail="/images/tdh_architecture_diagram.png" data-sub-html="<h2>架构图</h2><p>架构图</p>">
+<p><strong>TDH产品架构图</strong>
+<figure><a class="lightgallery" href="/images/tdh_architecture_diagram.png" title="产品架构图" data-thumbnail="/images/tdh_architecture_diagram.png" data-sub-html="<h2>产品架构图</h2><p>产品架构图</p>">
         <img
             class="lazyload"
             src="/svg/loading.min.svg"
@@ -146,12 +153,12 @@
             data-srcset="/images/tdh_architecture_diagram.png, /images/tdh_architecture_diagram.png 1.5x, /images/tdh_architecture_diagram.png 2x"
             data-sizes="auto"
             alt="/images/tdh_architecture_diagram.png" />
-    </a><figcaption class="image-caption">架构图</figcaption>
+    </a><figcaption class="image-caption">产品架构图</figcaption>
     </figure></p>
-<h2 id="1-基础概念">1 基础概念</h2>
-<h3 id="服务">服务</h3>
+<h2 id="基础概念">基础概念</h2>
+<h3 id="tdh服务">TDH服务</h3>
 <blockquote>
-<p>基于TDH6.0整理</p>
+<p>基于TDH6.0文档整理</p>
 </blockquote>
 <table>
 <thead>
@@ -207,7 +214,7 @@
 </tr>
 <tr>
 <td>Transporter</td>
-<td>数据etl工具</td>
+<td>数据ETL工具</td>
 </tr>
 <tr>
 <td>Pilot</td>
@@ -230,6 +237,10 @@
 <td>分布式消息队列</td>
 </tr>
 <tr>
+<td>Sqoop1</td>
+<td>分布式ETL工具</td>
+</tr>
+<tr>
 <td>Codis</td>
 <td>分布式Redis解决方案</td>
 </tr>
@@ -247,7 +258,7 @@
 </tr>
 <tr>
 <td>Kerberos</td>
-<td>认证类型</td>
+<td>数据认证体系</td>
 </tr>
 <tr>
 <td>Guardian</td>
@@ -259,14 +270,108 @@
 </tr>
 </tbody>
 </table>
+<h3 id="数仓">数仓</h3>
+<p>​数据仓库在企业中核心的定位就是实现统一的数据采集、加工、安全管理以及提供数据服务的中心平台，为各类基于数据的应用体系建设的基础设施工程</p>
 <hr>
-<h2 id="2-安装">2 安装</h2>
+<h2 id="安装">安装</h2>
 <p>由星环工程师负责安装</p>
 <h3 id="环境描述">环境描述</h3>
 <hr>
-<h2 id="3-配置">3 配置</h2>
+<h2 id="配置">配置</h2>
 <hr>
-<h2 id="to-be-continued">to be continued</h2>
+<h2 id="数据流转场景">数据流转场景</h2>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">文章内容来自网络</div>
+        </div>
+    </div>
+<h3 id="t1方式数据流转">T+1方式数据流转</h3>
+<p><figure><a class="lightgallery" href="/images/tdh_dataflow_t&#43;1.png" title="T&#43;1方式数据流转" data-thumbnail="/images/tdh_dataflow_t&#43;1.png" data-sub-html="<h2>T&#43;1</h2><p>T&#43;1方式数据流转</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/tdh_dataflow_t&#43;1.png"
+            data-srcset="/images/tdh_dataflow_t&#43;1.png, /images/tdh_dataflow_t&#43;1.png 1.5x, /images/tdh_dataflow_t&#43;1.png 2x"
+            data-sizes="auto"
+            alt="/images/tdh_dataflow_t&#43;1.png" />
+    </a><figcaption class="image-caption">T+1</figcaption>
+    </figure>
+T+1模式下数据仓库会在每天固定时间点采集当天或者前一天交易系统数据</p>
+<blockquote>
+<p>例一：</p>
+<blockquote>
+<p>oracle中的表 tableA，需要一次性的全量抽取全部数据，之后的业务需要对该表做精确查询。这个时候选择Transporter直接将数据录入orc表中，之后根据业务的需求，将数据录入hyperbase中。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>例二：</p>
+<blockquote>
+<p>oracle中的表tableA，该表每日有数据录入，需要对该表的数据做统计分析。这个时候可以选择sqoop对该表进行增量数据的抽取，放在HDFS上，之后通过inceptor将数据存入Argodb中，方便之后的统计分析。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>例三：</p>
+<blockquote>
+<p>每日的系统日志文件，需要根据日志进行ERROR的分析。选用flume对日志的目录进行数据采集，之后通过将数据存入Search中对日志信息进行分词，方便针对报错信息的排查。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>例四：</p>
+<blockquote>
+<p>超大量的离线历史数据文件，需要放入大数据平台存储。选用Superput将数据上传进hdfs进行存储。</p>
+</blockquote>
+</blockquote>
+<h3 id="准实时数据流转">准实时数据流转</h3>
+<p><figure><a class="lightgallery" href="/images/tdh_dataflow_semirealtime.png" title="准实时数据流转" data-thumbnail="/images/tdh_dataflow_semirealtime.png" data-sub-html="<h2>准实时</h2><p>准实时数据流转</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/tdh_dataflow_semirealtime.png"
+            data-srcset="/images/tdh_dataflow_semirealtime.png, /images/tdh_dataflow_semirealtime.png 1.5x, /images/tdh_dataflow_semirealtime.png 2x"
+            data-sizes="auto"
+            alt="/images/tdh_dataflow_semirealtime.png" />
+    </a><figcaption class="image-caption">准实时</figcaption>
+    </figure></p>
+<blockquote>
+<p>例一：</p>
+<blockquote>
+<p>Oracle中的数据需要准实时的将数据同步写入大数据平台中。搭建一套ogg+transporter的方式，可以将数据准实时的录入到orc事务表中。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>例二：</p>
+<blockquote>
+<p>Mysql中的数据需要准实时的将数据同步写入到大数据平台中。这边有很多的工具都可以直接将mysql数据同步到hdfs中，这边推荐使用CDC或者MySQL Applier for Hadoop。</p>
+</blockquote>
+</blockquote>
+<h3 id="实时流处理">实时流处理</h3>
+<p><figure><a class="lightgallery" href="/images/tdh_dataflow_realtime_streaming.png" title="实时流处理" data-thumbnail="/images/tdh_dataflow_realtime_streaming.png" data-sub-html="<h2>实时流</h2><p>实时流处理</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/tdh_dataflow_realtime_streaming.png"
+            data-srcset="/images/tdh_dataflow_realtime_streaming.png, /images/tdh_dataflow_realtime_streaming.png 1.5x, /images/tdh_dataflow_realtime_streaming.png 2x"
+            data-sizes="auto"
+            alt="/images/tdh_dataflow_realtime_streaming.png" />
+    </a><figcaption class="image-caption">实时流</figcaption>
+    </figure>
+比较多的情况下实时数据通过kakfa接入，数据来源可以是kafka producer/flume等，经过slipstream的处理，之后根据实际业务需求，将数据入库到TDH中</p>
+<blockquote>
+<p>例一：</p>
+<blockquote>
+<p>实时数据通过kafka进来，需要在经过处理后把结果实时显示在大屏上。这个时候的kafka担任着数据总线的功能，数据从kafka接入，通过slipstream处理后再输出给kafka。下游大屏显示工具实时消费kafka数据。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>例二：</p>
+<blockquote>
+<p>实施数据通过kafka进来，对结果需要进行统计分析和批处理。可以通过Slipstream接入数据到hyperbase表，之后再通过inceptor或者Hyperbase API，将数据流转到Inceptor ORC表中，从而满足业务需求。</p>
+</blockquote>
+</blockquote>
+<p>上面抽象的三种典型数据流转综合场景，其原理是非常一致的：数据通过工具接入，根据业务需求，选择写入合适的表。</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
