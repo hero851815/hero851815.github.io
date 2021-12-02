@@ -16,26 +16,26 @@
 `docker run -d --name nginx-web nginx`
 
 ### 创建nginx目录
-```
+```shell
 mkdir -p /var/log/nginx
 mkdir -p /etc/nginx
 mkdir -p /usr/share/nginx/html
 ```
 
 ### 复制容器中的配置文件至目录
-```
+```shell
 docker cp [容器id]:/etc/nginx ./conf
 docker cp [容器id]:/usr/share/nginx/html ./html
 ```
 
 ### 停止并删除容器
-```
+```shell
 docker stop nginx-web
 docker rm nginx-web
 ```
 
 ### 创建正式容器
-```
+```shell
 docker run -d \
   --name nginx-web \
   -p 80:80 \
@@ -65,7 +65,7 @@ nginx-1.9.9.tar.gz，移动到/usr/local/下
 `./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module`
 
 ### 编译安装(默认安装在/usr/local/nginx)
-```
+```shell
 make
 make install
 ```

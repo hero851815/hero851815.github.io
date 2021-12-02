@@ -141,7 +141,7 @@
             </div><div class="content" id="content"><h2 id="1-docker安装">1 Docker安装</h2>
 <h3 id="安装存储库">安装存储库</h3>
 <p><code>sudo yum install -y yum-utils device-mapper-persistent-data lvm2</code><br>
-<strong>若sudo命令无法执行则运行 <code>yum -y install yum-utils</code></strong></p>
+<strong>若sudo命令无法执行则运行</strong> <code>yum -y install yum-utils</code></p>
 <h3 id="配置docker源">配置Docker源</h3>
 <p><code>yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</code></p>
 <!-- `yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo` -->
@@ -182,8 +182,8 @@
 </ol>
 <blockquote>
 <p>示例：<br>
-docker build -t registry.gitlab.ssc.stn.sh.cn .<br>
-docker run -d -p 1088:8088 &ndash;name repair_api a36b6</p>
+<code>docker build -t registry.gitlab.ssc.stn.sh.cn .  </code><br>
+<code>docker run -d -p 1088:8088 --name repair_api a36b6</code></p>
 </blockquote>
 <h2 id="4-删除镜像">4 删除镜像</h2>
 <ol>
@@ -216,11 +216,11 @@ docker run -d -p 1088:8088 &ndash;name repair_api a36b6</p>
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">docker exec -it redis-test /bin/bash
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">docker <span class="nb">exec</span> -it redis-test /bin/bash
 redis-cli
-set test 1
-get test
-exit
+<span class="nb">set</span> <span class="nb">test</span> <span class="m">1</span>
+get <span class="nb">test</span>
+<span class="nb">exit</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -274,11 +274,11 @@ max-size: “5g”
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">{
-&#34;registry-mirrors&#34;: [&#34;http://f613ce8f.m.daocloud.io&#34;],
-&#34;log-driver&#34;:&#34;json-file&#34;,
-&#34;log-opts&#34;: {&#34;max-size&#34;:&#34;500m&#34;, &#34;max-file&#34;:&#34;3&#34;}
-}
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<span class="nt">&#34;registry-mirrors&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;http://f613ce8f.m.daocloud.io&#34;</span><span class="p">],</span>
+<span class="nt">&#34;log-driver&#34;</span><span class="p">:</span><span class="s2">&#34;json-file&#34;</span><span class="p">,</span>
+<span class="nt">&#34;log-opts&#34;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&#34;max-size&#34;</span><span class="p">:</span><span class="s2">&#34;500m&#34;</span><span class="p">,</span> <span class="nt">&#34;max-file&#34;</span><span class="p">:</span><span class="s2">&#34;3&#34;</span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><blockquote>

@@ -1,4 +1,4 @@
-# 星环TDH 笔记
+# TDH笔记
 
 
 {{< admonition info "">}}
@@ -53,12 +53,86 @@ ___
 ___
 
 ## 配置
+### Sqoop1
+#### 简介
+将Hadoop和关系型数据库中的数据相互转移的工具；  
+可以将关系型数据库中的数据导到Hadoop的HDFS/HIVE/HBase中，也可以将HDFS的数据导进到关系型数据库中；  
+通过Hadoop的mapreduce把数据从关系类型数据导入到HDFS   
+
+#### Sqoop原理
++ 用户的Sqoop脚本最终会变成提交到YARN上的一个M/R任务。
++ 通过Sqoop用户可以将数据从RDB抽取至HDFS。输入端是关系型数据库中的某张表，
++ Sqoop会去一行一行的把数据从这张表里读出来写入到HDFS;
++ 输出端是HDFS上关于这个表的文件的集合。由于整个抽取ETL过程是并行化的，因此输出端会有多个文件。
++ 输出的文件可以指定列分隔符、换行符等分界符
++ 通过Sqoop把HDFS上的文件回传到关系型数据库的过程和第二条类似
+
+#### 安装
+To be continued
+
+#### 测试
+##### 列出RDB中数据库
+>语法范式解析：
+>>sqoop list-databases: SQOOP 命令  
+--username: RDB用户名  
+--password: RDB明文密码  
+-P: 需要用户输入密码  
+--password-file: 用户密码文件(400权限)  
+--connect: 数据库JDBC连接串  
+
+```shell
+sqoop list-databases \
+--connect jdbc:mysql://localhost:3306 \
+--username root \
+--password 123456
+```
+
+##### 列出RDB中某数据库中的表
+>语法范式解析：
+>>sqoop list-databases: SQOOP 命令  
+--username: RDB用户名  
+--password: RDB明文密码  
+-P: 需要用户输入密码  
+--password-file: 用户密码文件(400权限)  
+--connect: 数据库JDBC连接串
+
+```shell
+sqoop list-tables \
+--connect jdbc:mysql://localhost:3306/db_test \
+--username root \
+--password 123456
+```
+
+#### 数据抽取
+##### 全量数据抽取至HDFS
+>语法范式解析：
+>>sqoop import: SQOOP 命令，从关系型数据库导数到Hadoop  
+--username: RDB用户名  
+--password: RDB明文密码  
+--connect: 数据库JDBC连接串  
+--target-dir: HDFS目标文件夹位置  
+-m: mapper个数，抽数线程数，默认4  
+--null-string: string类型的空值处理  
+--null-node-string:非string类型的空值  
+--fields-terminated-by:列分隔符  
+--hive-drop-import-delims:去除^A,\n,\r等特殊字符
+
+{{< admonition warning "">}}
+1.当-m大于1时，需要指定--split-by 字段  
+2.--target-dir 后面跟的HDFS目录需要确认用户有写权限
+{{</ admonition >}}
+
+```shell
+
+```
+
+##### 增量数据抽取
 
 
 ___
 
 
-## 数据流转场景
+## TDH 数据流转场景
 {{< admonition note "">}}
 文章内容来自网络
 {{</ admonition >}}

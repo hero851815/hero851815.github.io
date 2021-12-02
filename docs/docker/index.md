@@ -4,7 +4,7 @@
 ## 1 Docker安装
 ### 安装存储库
 `sudo yum install -y yum-utils device-mapper-persistent-data lvm2`  
-**若sudo命令无法执行则运行 `yum -y install yum-utils`**
+**若sudo命令无法执行则运行** `yum -y install yum-utils`
 
 ### 配置Docker源
 `yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo`
@@ -39,8 +39,8 @@ Linux虚拟机若安装时报Error: moby-containerd conflicts with containerd.io
 3. 运行docker images查看镜像
 4. 启动镜像,运行 `docker run -d -p 8088:8088 --name <container name> <image id>`  
 >示例：  
- docker build -t registry.gitlab.ssc.stn.sh.cn .  
- docker run -d -p 1088:8088 --name repair_api a36b6
+ `docker build -t registry.gitlab.ssc.stn.sh.cn .  `  
+ `docker run -d -p 1088:8088 --name repair_api a36b6`
 
 ## 4 删除镜像
 1. 查询容器 `docker ps -a`  
@@ -62,7 +62,7 @@ Linux虚拟机若安装时报Error: moby-containerd conflicts with containerd.io
 将redis数据dump.rdb存放至/docker/目录下,并运行  
 `docker run -itd --name redis -v /docker/dump.rdb:/data/dump.rdb -p 6379:6379 redis-bak --appendonly yes`
 4. 测试
-	```
+	```shell
 	docker exec -it redis-test /bin/bash
 	redis-cli
 	set test 1
@@ -93,7 +93,7 @@ Linux虚拟机若安装时报Error: moby-containerd conflicts with containerd.io
 
 	>全局设置  
 	新建/etc/docker/daemon.json，添加log-dirver和log-opts参数
-	```
+	```json
 	{
 	"registry-mirrors": ["http://f613ce8f.m.daocloud.io"],
 	"log-driver":"json-file",
