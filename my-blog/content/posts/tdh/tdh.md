@@ -62,13 +62,140 @@ Transwarp Data Hub是基于Hadoop技术架构产生的大数据平台
 ___
 
 ## 安装
-由星环工程师负责安装
 ### 环境描述
 
 
 ___
 
 ## 配置
+### Hadoop/HDFS
+#### 简介
+
+#### 伪分布式安装
++ 1.修改hadoop-env.sh，配置JAVA变量  
+`export JAVA_HOME=/usr/local/java/jdk1.8.0_311`
++ 2.修改core-site.xml，配置文件系统和访问位置  
+  ```xml
+  <configuration>
+        <property>
+              <name>fs.defaultFS</name>
+              <value>hdfs://127.0.0.1:9000</value>
+        </property>
+        <property>
+              <name>hadoop.tmp.dir</name>
+              <value>file:/usr/local/hadoop/hadoop-2.10.1/tmp</value>
+        </property>
+  </configuration>
+  ```
++ 3.修改hdfs-site.xml，设置文件存储的位置(datanode和namenode不在同一个文件夹,所以可以共存在一个机器,通过端口访问)  
+  ```xml
+  <configuration>
+        <property>
+              <name>dfs.replication</name>
+              <value>1</value>
+        </property>
+        <property>
+              <name>dfs.namenode.name.dir</name>
+              <value>file:/usr/local/hadoop/hadoop-2.10.1/tmp/dfs/name</value>
+        </property>
+        <property>
+              <name>dfs.datanode.data.dir</name>
+              <value>file:/usr/local/hadoop/hadoop-2.10.1/tmp/dfs/data</value>
+        </property>
+  </configuration>
+    ``` 
++ 4.配置环境变量`vim ~/.bashrc`
+  ```shell
+  export JAVA_HOME=/usr/local/java/jdk1.8.0_311
+  export FLUME_HOME=/usr/local/apache-flume-1.8.0-bin
+  export HADOOP_HOME=/usr/local/hadoop/hadoop-2.10.1
+  export HADOOP_INSTALL=$HADOOP_HOME
+  export HADOOP_MAPRED_HOME=$HADOOP_HOME
+  export HADOOP_COMMON_HOME=$HADOOP_HOME
+  export HADOOP_HDFS_HOME=$HADOOP_HOME
+  export YARN_HOME=$HADOOP_HOME
+  export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
+  export JAVA_LIBRARY_PATH=$HADOOP_HOME/lib/native
+  export SQOOP_HOME=/usr/local/hadoop/sqoop-1.4.7
+  export HIVE_HOME=/usr/local/hadoop/apache-hive-3.1.2
+  export HIVE_CONF_DIR=$HIVE_HOME/conf
+  export PATH=$PATH:$FLUME_HOME/bin:$JAVA_HOME/bin:$SQOOP_HOME/bin:$HIVE_HOME/bin:$HIVE_CONF_DIR:$HAOOP_HOME/bin:$HADOOP_HOME/sbin
+  ```
++ 5.初始化hdfs `./bin/hdfs namenode -format`  
++ 6.启动进程`./sbin/start-dfs.sh`  
+hadoop启动后通过命令`jps`查看，有三个进程NameNode、DataNode、SecondaryNode；访问Web界面<http://localhost:50070>  
+
+
+#### HDFS命令
+##### 查看
+查看指定目录下的文件和文件夹  
+`$HADOOP_HOME/bin/hadoop fs -ls /user/root/tb_dept`  
+查看文件内容  
+`$HADOOP_HOME/bin/hadoop fs -cat /user/root/tb_dept/part-m-00000`  
+##### 删除
+删除文件  
+`$HADOOP_HOME/bin/hadoop fs -rm /user/root/tb_dept/*`  
+删除文件夹  
+`$HADOOP_HOME/bin/hadoop fs -rm -r /user/root/tb_dept`
+
+### Hive数据仓库
+#### 配置
+1.将/conf/hive-default.xml.template复制重命名为hive-site.xml  
+2.根据hive-site.xml中属性<hive.metastore.warehouse.dir>的值</user/hive/warehouse>，让Hadoop新建hdfs目录  
+`$HADOOP_HOME/bin/hadoop fs -mkdir -p /user/hive/warehouse`  
+3.赋予读写权限  
+`$HADOOP_HOME/bin/hadoop fs -chmod 777 /user/hive/warehouse`  
+4.新建`/tmp/hive`hdfs目录并赋予权限    
+`$HADOOP_HOME/bin/hadoop fs -mkdir -p /tmp/hive`  
+`$HADOOP_HOME/bin/hadoop fs -chmod 777 /tmp/hive`  
+5.新建本地目录可自定义 `/opt/hive/tmp`并赋予权限
+修改hive-site.xml中的临时目录，搜索目录将`${system:java.io.tmpdir}`替换为本地临时目录；将`${system:user.name}`替换为root  
+6.修改hive-site.xml中数据库相关配置
+```xml
+<!-- 修改数据库连接 -->
+<name>javax.jdo.option.ConnectionURL</name>
+<value>jdbc:mysql://10.211.55.5:3306/hive_test?createDatabaseIfNotExist=true</value>
+
+<!-- 修改数据库驱动 -->
+<name>javax.jdo.option.ConnectionDriverName</name>
+<value>com.mysql.jdbc.Driver</value>
+
+<!-- 修改数据库用户名 -->
+<name>javax.jdo.option.ConnectionUserName</name>
+<value>root</value>
+
+<!-- 修改数据库密码 -->
+<name>javax.jdo.option.ConnectionPassword</name>
+<value>123456</value>
+
+<!-- 修改验证为false -->
+<name>hive.metastore.schema.verification</name>
+<value>false</value>
+```
+6.将数据库连接驱动mysql-connector-java-8.0.27.jar放入/usr/local/hadoop/apache-hive-3.1.2/lib/下  
+7.进入/conf目录下，复制`hive-env.sh.template`重命名为`hive-env.sh`  
+8.打开`hive-env.sh`添加变量
+```
+export HADOOP_HOME=/usr/local/hadoop/hadoop-2.10.1
+export HIVE_CONF_DIR=/usr/local/hadoop/apache-hive-3.1.2/conf
+export HIVE_AUX_JARS_PATH=/usr/local/hadoop/apache-hive-3.1.2/lib
+```
+
+##### 启动
+初始化数据库  
+`$HIVE_HOME/bin/schematool -initSchema -dbType mysql`  
+启动  
+·$HIVE_HOME/bin/hive·
+
+##### 常见问题
++ 错误信息：`Class path contains multiple SLF4J bindings`
+![errorlog1](/images/hive_run_errorlog_1.png "错误日志1")
+原因及处理：hadoop和hive的log4j包版本不一致；删除hive中log4j-slf4j-impl-2.10.0.jar包  
++ 错误信息：`com.ctc.wstx.exc.WstxParsingException: Illegal character entity: expansion character`
+![errorlog2](/images/hive_run_errorlog_2.png "错误日志2")
+原因及处理：找到报错文件所在行，注释特殊符号
+
+
 ### Sqoop1
 #### 简介
 将Hadoop和关系型数据库中的数据相互转移的工具；  
@@ -82,6 +209,7 @@ ___
 + 输出端是HDFS上关于这个表的文件的集合。由于整个抽取ETL过程是并行化的，因此输出端会有多个文件。
 + 输出的文件可以指定列分隔符、换行符等分界符
 + 通过Sqoop把HDFS上的文件回传到关系型数据库的过程和第二条类似
+
 
 #### 安装
 To be continued
@@ -121,25 +249,13 @@ sqoop list-tables \
 
 #### 数据抽取
 ##### 全量数据抽取至HDFS
->语法范式解析：
->>sqoop import: SQOOP 命令，从关系型数据库导数到Hadoop  
---username: RDB用户名  
---password: RDB明文密码  
---connect: 数据库JDBC连接串  
---target-dir: HDFS目标文件夹位置  
--m: mapper个数，抽数线程数，默认4  
---null-string: string类型的空值处理  
---null-node-string:非string类型的空值  
---fields-terminated-by:列分隔符  
---hive-drop-import-delims:去除^A,\n,\r等特殊字符
-
-{{< admonition warning "">}}
-1.当-m大于1时，需要指定--split-by 字段  
-2.--target-dir 后面跟的HDFS目录需要确认用户有写权限
-{{</ admonition >}}
-
 ```shell
-
+sqoop import \
+--connect jdbc:mysql://localhost:3306/db_test \
+--username root \
+--password 123456 \
+--table db_test \
+-m 1
 ```
 
 ##### 增量数据抽取

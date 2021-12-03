@@ -228,7 +228,7 @@ theme = "LoveIt"
     #  是否在搜索结果中隐藏一篇文章
     hiddenFromSearch = false
     #  是否使用 twemoji
-    twemoji = false
+    twemoji = true
     # 是否使用 lightgallery
     lightgallery = false
     #  是否使用 ruby 扩展语法

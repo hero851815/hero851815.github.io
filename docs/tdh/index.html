@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hero851815.gitee.io\/tdh\/"
-        },"genre": "posts","keywords": "tdh","wordcount":  2283 ,
+        },"genre": "posts","keywords": "tdh","wordcount":  3275 ,
         "url": "https:\/\/hero851815.gitee.io\/tdh\/","datePublished": "2021-12-01T15:50:00+08:00","dateModified": "2021-12-01T15:50:00+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">TDH笔记</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hero851815</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/tdh/"><i class="far fa-folder fa-fw"></i>tdh</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-12-01">2021-12-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2283 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-12-01">2021-12-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3275 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -128,9 +128,31 @@
     </li>
     <li><a href="#配置">配置</a>
       <ul>
-        <li><a href="#sqoop1">Sqoop1</a>
+        <li><a href="#hadoophdfs">Hadoop/HDFS</a>
           <ul>
             <li><a href="#简介">简介</a></li>
+            <li><a href="#伪分布式安装">伪分布式安装</a></li>
+            <li><a href="#hdfs命令">HDFS命令</a>
+              <ul>
+                <li><a href="#查看">查看</a></li>
+                <li><a href="#删除">删除</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#hive数据仓库">Hive数据仓库</a>
+          <ul>
+            <li><a href="#配置-1">配置</a>
+              <ul>
+                <li><a href="#启动">启动</a></li>
+                <li><a href="#常见问题">常见问题</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#sqoop1">Sqoop1</a>
+          <ul>
+            <li><a href="#简介-1">简介</a></li>
             <li><a href="#sqoop原理">Sqoop原理</a></li>
             <li><a href="#安装-1">安装</a></li>
             <li><a href="#测试">测试</a>
@@ -296,12 +318,236 @@
 <p>​数据仓库在企业中核心的定位就是实现统一的数据采集、加工、安全管理以及提供数据服务的中心平台，为各类基于数据的应用体系建设的基础设施工程</p>
 <hr>
 <h2 id="安装">安装</h2>
-<p>由星环工程师负责安装</p>
 <h3 id="环境描述">环境描述</h3>
 <hr>
 <h2 id="配置">配置</h2>
-<h3 id="sqoop1">Sqoop1</h3>
+<h3 id="hadoophdfs">Hadoop/HDFS</h3>
 <h4 id="简介">简介</h4>
+<h4 id="伪分布式安装">伪分布式安装</h4>
+<ul>
+<li>1.修改hadoop-env.sh，配置JAVA变量<br>
+<code>export JAVA_HOME=/usr/local/java/jdk1.8.0_311</code></li>
+<li>2.修改core-site.xml，配置文件系统和访问位置
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;configuration&gt;</span>
+      <span class="nt">&lt;property&gt;</span>
+            <span class="nt">&lt;name&gt;</span>fs.defaultFS<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;value&gt;</span>hdfs://127.0.0.1:9000<span class="nt">&lt;/value&gt;</span>
+      <span class="nt">&lt;/property&gt;</span>
+      <span class="nt">&lt;property&gt;</span>
+            <span class="nt">&lt;name&gt;</span>hadoop.tmp.dir<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;value&gt;</span>file:/usr/local/hadoop/hadoop-2.10.1/tmp<span class="nt">&lt;/value&gt;</span>
+      <span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>3.修改hdfs-site.xml，设置文件存储的位置(datanode和namenode不在同一个文件夹,所以可以共存在一个机器,通过端口访问)
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;configuration&gt;</span>
+      <span class="nt">&lt;property&gt;</span>
+            <span class="nt">&lt;name&gt;</span>dfs.replication<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;value&gt;</span>1<span class="nt">&lt;/value&gt;</span>
+      <span class="nt">&lt;/property&gt;</span>
+      <span class="nt">&lt;property&gt;</span>
+            <span class="nt">&lt;name&gt;</span>dfs.namenode.name.dir<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;value&gt;</span>file:/usr/local/hadoop/hadoop-2.10.1/tmp/dfs/name<span class="nt">&lt;/value&gt;</span>
+      <span class="nt">&lt;/property&gt;</span>
+      <span class="nt">&lt;property&gt;</span>
+            <span class="nt">&lt;name&gt;</span>dfs.datanode.data.dir<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;value&gt;</span>file:/usr/local/hadoop/hadoop-2.10.1/tmp/dfs/data<span class="nt">&lt;/value&gt;</span>
+      <span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>4.配置环境变量<code>vim ~/.bashrc</code>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/local/java/jdk1.8.0_311
+<span class="nb">export</span> <span class="nv">FLUME_HOME</span><span class="o">=</span>/usr/local/apache-flume-1.8.0-bin
+<span class="nb">export</span> <span class="nv">HADOOP_HOME</span><span class="o">=</span>/usr/local/hadoop/hadoop-2.10.1
+<span class="nb">export</span> <span class="nv">HADOOP_INSTALL</span><span class="o">=</span><span class="nv">$HADOOP_HOME</span>
+<span class="nb">export</span> <span class="nv">HADOOP_MAPRED_HOME</span><span class="o">=</span><span class="nv">$HADOOP_HOME</span>
+<span class="nb">export</span> <span class="nv">HADOOP_COMMON_HOME</span><span class="o">=</span><span class="nv">$HADOOP_HOME</span>
+<span class="nb">export</span> <span class="nv">HADOOP_HDFS_HOME</span><span class="o">=</span><span class="nv">$HADOOP_HOME</span>
+<span class="nb">export</span> <span class="nv">YARN_HOME</span><span class="o">=</span><span class="nv">$HADOOP_HOME</span>
+<span class="nb">export</span> <span class="nv">HADOOP_COMMON_LIB_NATIVE_DIR</span><span class="o">=</span><span class="nv">$HADOOP_HOME</span>/lib/native
+<span class="nb">export</span> <span class="nv">JAVA_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$HADOOP_HOME</span>/lib/native
+<span class="nb">export</span> <span class="nv">SQOOP_HOME</span><span class="o">=</span>/usr/local/hadoop/sqoop-1.4.7
+<span class="nb">export</span> <span class="nv">HIVE_HOME</span><span class="o">=</span>/usr/local/hadoop/apache-hive-3.1.2
+<span class="nb">export</span> <span class="nv">HIVE_CONF_DIR</span><span class="o">=</span><span class="nv">$HIVE_HOME</span>/conf
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$FLUME_HOME</span>/bin:<span class="nv">$JAVA_HOME</span>/bin:<span class="nv">$SQOOP_HOME</span>/bin:<span class="nv">$HIVE_HOME</span>/bin:<span class="nv">$HIVE_CONF_DIR</span>:<span class="nv">$HAOOP_HOME</span>/bin:<span class="nv">$HADOOP_HOME</span>/sbin
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>5.初始化hdfs <code>./bin/hdfs namenode -format</code></li>
+<li>6.启动进程<code>./sbin/start-dfs.sh</code><br>
+hadoop启动后通过命令<code>jps</code>查看，有三个进程NameNode、DataNode、SecondaryNode；访问Web界面<a href="http://localhost:50070" target="_blank" rel="noopener noreffer">http://localhost:50070</a></li>
+</ul>
+<h4 id="hdfs命令">HDFS命令</h4>
+<h5 id="查看">查看</h5>
+<p>查看指定目录下的文件和文件夹<br>
+<code>$HADOOP_HOME/bin/hadoop fs -ls /user/root/tb_dept</code><br>
+查看文件内容<br>
+<code>$HADOOP_HOME/bin/hadoop fs -cat /user/root/tb_dept/part-m-00000</code></p>
+<h5 id="删除">删除</h5>
+<p>删除文件<br>
+<code>$HADOOP_HOME/bin/hadoop fs -rm /user/root/tb_dept/*</code><br>
+删除文件夹<br>
+<code>$HADOOP_HOME/bin/hadoop fs -rm -r /user/root/tb_dept</code></p>
+<h3 id="hive数据仓库">Hive数据仓库</h3>
+<h4 id="配置-1">配置</h4>
+<p>1.将/conf/hive-default.xml.template复制重命名为hive-site.xml<br>
+2.根据hive-site.xml中属性&lt;hive.metastore.warehouse.dir&gt;的值&lt;/user/hive/warehouse&gt;，让Hadoop新建hdfs目录<br>
+<code>$HADOOP_HOME/bin/hadoop fs -mkdir -p /user/hive/warehouse</code><br>
+3.赋予读写权限<br>
+<code>$HADOOP_HOME/bin/hadoop fs -chmod 777 /user/hive/warehouse</code><br>
+4.新建<code>/tmp/hive</code>hdfs目录并赋予权限 <br>
+<code>$HADOOP_HOME/bin/hadoop fs -mkdir -p /tmp/hive</code><br>
+<code>$HADOOP_HOME/bin/hadoop fs -chmod 777 /tmp/hive</code><br>
+5.新建本地目录可自定义 <code>/opt/hive/tmp</code>并赋予权限
+修改hive-site.xml中的临时目录，搜索目录将<code>${system:java.io.tmpdir}</code>替换为本地临时目录；将<code>${system:user.name}</code>替换为root<br>
+6.修改hive-site.xml中数据库相关配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- 修改数据库连接 --&gt;</span>
+<span class="nt">&lt;name&gt;</span>javax.jdo.option.ConnectionURL<span class="nt">&lt;/name&gt;</span>
+<span class="nt">&lt;value&gt;</span>jdbc:mysql://10.211.55.5:3306/hive_test?createDatabaseIfNotExist=true<span class="nt">&lt;/value&gt;</span>
+
+<span class="c">&lt;!-- 修改数据库驱动 --&gt;</span>
+<span class="nt">&lt;name&gt;</span>javax.jdo.option.ConnectionDriverName<span class="nt">&lt;/name&gt;</span>
+<span class="nt">&lt;value&gt;</span>com.mysql.jdbc.Driver<span class="nt">&lt;/value&gt;</span>
+
+<span class="c">&lt;!-- 修改数据库用户名 --&gt;</span>
+<span class="nt">&lt;name&gt;</span>javax.jdo.option.ConnectionUserName<span class="nt">&lt;/name&gt;</span>
+<span class="nt">&lt;value&gt;</span>root<span class="nt">&lt;/value&gt;</span>
+
+<span class="c">&lt;!-- 修改数据库密码 --&gt;</span>
+<span class="nt">&lt;name&gt;</span>javax.jdo.option.ConnectionPassword<span class="nt">&lt;/name&gt;</span>
+<span class="nt">&lt;value&gt;</span>123456<span class="nt">&lt;/value&gt;</span>
+
+<span class="c">&lt;!-- 修改验证为false --&gt;</span>
+<span class="nt">&lt;name&gt;</span>hive.metastore.schema.verification<span class="nt">&lt;/name&gt;</span>
+<span class="nt">&lt;value&gt;</span>false<span class="nt">&lt;/value&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>6.将数据库连接驱动mysql-connector-java-8.0.27.jar放入/usr/local/hadoop/apache-hive-3.1.2/lib/下<br>
+7.进入/conf目录下，复制<code>hive-env.sh.template</code>重命名为<code>hive-env.sh</code><br>
+8.打开<code>hive-env.sh</code>添加变量</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">export HADOOP_HOME=/usr/local/hadoop/hadoop-2.10.1
+export HIVE_CONF_DIR=/usr/local/hadoop/apache-hive-3.1.2/conf
+export HIVE_AUX_JARS_PATH=/usr/local/hadoop/apache-hive-3.1.2/lib
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="启动">启动</h5>
+<p>初始化数据库<br>
+<code>$HIVE_HOME/bin/schematool -initSchema -dbType mysql</code><br>
+启动<br>
+·$HIVE_HOME/bin/hive·</p>
+<h5 id="常见问题">常见问题</h5>
+<ul>
+<li>错误信息：<code>Class path contains multiple SLF4J bindings</code>
+<figure><a class="lightgallery" href="/images/hive_run_errorlog_1.png" title="errorlog1" data-thumbnail="/images/hive_run_errorlog_1.png" data-sub-html="<h2>错误日志1</h2><p>errorlog1</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/hive_run_errorlog_1.png"
+            data-srcset="/images/hive_run_errorlog_1.png, /images/hive_run_errorlog_1.png 1.5x, /images/hive_run_errorlog_1.png 2x"
+            data-sizes="auto"
+            alt="/images/hive_run_errorlog_1.png" />
+    </a><figcaption class="image-caption">错误日志1</figcaption>
+    </figure>
+原因及处理：hadoop和hive的log4j包版本不一致；删除hive中log4j-slf4j-impl-2.10.0.jar包</li>
+<li>错误信息：<code>com.ctc.wstx.exc.WstxParsingException: Illegal character entity: expansion character</code>
+<figure><a class="lightgallery" href="/images/hive_run_errorlog_2.png" title="errorlog2" data-thumbnail="/images/hive_run_errorlog_2.png" data-sub-html="<h2>错误日志2</h2><p>errorlog2</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/hive_run_errorlog_2.png"
+            data-srcset="/images/hive_run_errorlog_2.png, /images/hive_run_errorlog_2.png 1.5x, /images/hive_run_errorlog_2.png 2x"
+            data-sizes="auto"
+            alt="/images/hive_run_errorlog_2.png" />
+    </a><figcaption class="image-caption">错误日志2</figcaption>
+    </figure>
+原因及处理：找到报错文件所在行，注释特殊符号</li>
+</ul>
+<h3 id="sqoop1">Sqoop1</h3>
+<h4 id="简介-1">简介</h4>
 <p>将Hadoop和关系型数据库中的数据相互转移的工具；<br>
 可以将关系型数据库中的数据导到Hadoop的HDFS/HIVE/HBase中，也可以将HDFS的数据导进到关系型数据库中；<br>
 通过Hadoop的mapreduce把数据从关系类型数据导入到HDFS</p>
@@ -371,36 +617,22 @@
 </div>
 </div><h4 id="数据抽取">数据抽取</h4>
 <h5 id="全量数据抽取至hdfs">全量数据抽取至HDFS</h5>
-<blockquote>
-<p>语法范式解析：</p>
-<blockquote>
-<p>sqoop import: SQOOP 命令，从关系型数据库导数到Hadoop<br>
-&ndash;username: RDB用户名<br>
-&ndash;password: RDB明文密码<br>
-&ndash;connect: 数据库JDBC连接串<br>
-&ndash;target-dir: HDFS目标文件夹位置<br>
--m: mapper个数，抽数线程数，默认4<br>
-&ndash;null-string: string类型的空值处理<br>
-&ndash;null-node-string:非string类型的空值<br>
-&ndash;fields-terminated-by:列分隔符<br>
-&ndash;hive-drop-import-delims:去除^A,\n,\r等特殊字符</p>
-</blockquote>
-</blockquote>
-<div class="details admonition warning open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-exclamation-triangle fa-fw"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">1.当-m大于1时，需要指定&ndash;split-by 字段<br>
-2.&ndash;target-dir 后面跟的HDFS目录需要确认用户有写权限</div>
-        </div>
-    </div>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">sqoop import <span class="se">\
+</span><span class="se"></span>--connect jdbc:mysql://localhost:3306/db_test <span class="se">\
+</span><span class="se"></span>--username root <span class="se">\
+</span><span class="se"></span>--password <span class="m">123456</span> <span class="se">\
+</span><span class="se"></span>--table db_test <span class="se">\
+</span><span class="se"></span>-m <span class="m">1</span>
 </code></pre></td></tr></table>
 </div>
 </div><h5 id="增量数据抽取">增量数据抽取</h5>
@@ -538,5 +770,5 @@ T+1模式下数据仓库会在每天固定时间点采集当天或者前一天�
             </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
                 <i class="fas fa-comment fa-fw"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>
