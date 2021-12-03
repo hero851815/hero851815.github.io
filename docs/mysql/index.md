@@ -234,9 +234,9 @@ docker run -p 3308:3306 --name mysql \
 `cp /opt/mysql/support-files/mysql.server /etc/init.d/mysql`
 + 8.启动服务 `service mysql start`
 + 9.设置开机启动（可选） `chkconfig --add mysql`
-+ 10.配置环境变量（可选）`vim /etc/profile`  
++ 10.配置环境变量（可选）`vim ~/.bashrc`  
   在PATH中添加路径 `export PATH=$PATH:/opt/mysql/bin`  
-  `source /etc/profile`使其立即生效
+  `source ~/.bashrc`使其立即生效
 
 
 #### Windows
