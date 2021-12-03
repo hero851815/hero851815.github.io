@@ -185,7 +185,10 @@ export HIVE_AUX_JARS_PATH=/usr/local/hadoop/apache-hive-3.1.2/lib
 初始化数据库  
 `$HIVE_HOME/bin/schematool -initSchema -dbType mysql`  
 启动  
-·$HIVE_HOME/bin/hive·
+`$HIVE_HOME/bin/hive`
+
+##### 测试
+从文本中导入
 
 ##### 常见问题
 + 错误信息：`Class path contains multiple SLF4J bindings`
