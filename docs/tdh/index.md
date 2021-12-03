@@ -105,8 +105,9 @@ ___
   export HIVE_CONF_DIR=$HIVE_HOME/conf
   export PATH=$PATH:$FLUME_HOME/bin:$JAVA_HOME/bin:$SQOOP_HOME/bin:$HIVE_HOME/bin:$HIVE_CONF_DIR:$HAOOP_HOME/bin:$HADOOP_HOME/sbin
   ```
-+ 5.初始化hdfs `./bin/hdfs namenode -format`  
-+ 6.启动进程`./sbin/start-dfs.sh`  
+  立即生效`source ~/.bashrc`
++ 5.初始化hdfs `$HADOOP_HOME/bin/hdfs namenode -format`  
++ 6.启动进程`$HADOOP_HOME/sbin/start-dfs.sh`  
 hadoop启动后通过命令`jps`查看，有三个进程NameNode、DataNode、SecondaryNode；访问Web界面<http://localhost:50070>  
 
 
