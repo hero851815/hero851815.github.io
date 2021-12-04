@@ -29,5 +29,5 @@ Hugo +  Giteepages搭建的Blog,主题LoveIt
 示例:  
 `{{< friend name="Dillon" url="https://github.com/dillonzq/" logo="https://avatars0.githubusercontent.com/u/30786232?s=460&u=5fc878f67c869ce6628cf65121b8d73e1733f941&v=4" word="LoveIt主题作者" >}}`
 
-#### 发布至gitee
+#### 发布至git
 <!--修改config.toml中的baseURL为Gitee Pages服务地址-->构建网站后上传
