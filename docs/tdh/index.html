@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hero851815.gitee.io\/tdh\/"
-        },"genre": "posts","keywords": "tdh","wordcount":  3423 ,
+        },"genre": "posts","keywords": "tdh","wordcount":  4258 ,
         "url": "https:\/\/hero851815.gitee.io\/tdh\/","datePublished": "2021-12-01T15:50:00+08:00","dateModified": "2021-12-01T15:50:00+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">TDH笔记</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hero851815</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/tdh/"><i class="far fa-folder fa-fw"></i>tdh</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-12-01">2021-12-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3423 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-12-01">2021-12-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4258 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 9 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -119,6 +119,7 @@
       <ul>
         <li><a href="#tdh服务">TDH服务</a></li>
         <li><a href="#数仓">数仓</a></li>
+        <li><a href="#hadoophdfshivehbase之间的关系">Hadoop、HDFS、Hive、HBase之间的关系</a></li>
       </ul>
     </li>
     <li><a href="#安装">安装</a>
@@ -140,7 +141,7 @@
             </li>
           </ul>
         </li>
-        <li><a href="#hive数据仓库">Hive数据仓库</a>
+        <li><a href="#hive数据仓库工具">Hive数据仓库工具</a>
           <ul>
             <li><a href="#配置-1">配置</a>
               <ul>
@@ -317,7 +318,58 @@
 </table>
 <h3 id="数仓">数仓</h3>
 <p>​数据仓库在企业中核心的定位就是实现统一的数据采集、加工、安全管理以及提供数据服务的中心平台，为各类基于数据的应用体系建设的基础设施工程</p>
-<hr>
+<h3 id="hadoophdfshivehbase之间的关系">Hadoop、HDFS、Hive、HBase之间的关系</h3>
+<ul>
+<li>
+<p><strong>Hadoop</strong>：是一个分布式计算的开源框架</p>
+</li>
+<li>
+<p><strong>HDFS</strong>：是Hadoop的三大核心组件之一</p>
+</li>
+<li>
+<p><strong>Hive</strong>：用户处理存储在HDFS中的数据，hive的意义就是把好写的hive的sql转换为复杂难写的map-reduce程序。</p>
+</li>
+<li>
+<p><strong>Hbase</strong>：是一款基于HDFS的数据库，是一种NoSQL数据库，主要适用于海量明细数据（十亿、百亿）的随机实时查询，如日志明细、交易清单、轨迹行为等。</p>
+<blockquote>
+<p>Hive与HBase的区别和联系</p>
+<blockquote>
+<p>区别：
+Hive：Hive是基于Hadoop的一个<strong>数据仓库工具</strong>，可以将结构化的数据文件映射为一张数据库表，并提供简单的sql查询功能。</p>
+<ul>
+<li>Hive本身不存储和计算数据，它完全依赖于HDFS和MapReduce，Hive中的表纯逻辑。hive需要用到hdfs存储文件，需要用到MapReduce计算框架。</li>
+<li>hive可以认为是map-reduce的一个包装。hive的意义就是把好写的hive的sql转换为复杂难写的map-reduce程序。
+HBase：HBase是Hadoop的<strong>数据库</strong>，一个分布式、可扩展、大数据的存储。</li>
+</ul>
+<ul>
+<li>hbase是物理表，不是逻辑表，提供一个超大的内存hash表，搜索引擎通过它来存储索引，方便查询操作</li>
+<li>hbase可以认为是hdfs的一个包装。他的本质是数据存储，是个NoSql数据库；hbase部署于hdfs之上，并且克服了hdfs在随机读写方面的缺点。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>联系：
+Hbase和Hive在大数据架构中处在不同位置，Hbase主要解决实时数据查询问题，Hive主要解决数据处理和计算问题，一般是配合使用。</p>
+</blockquote>
+</blockquote>
+<p>在大数据架构中，Hive和HBase是协作关系，数据流一般如下图：</p>
+<ol>
+<li>通过ETL工具将数据源抽取到HDFS存储；</li>
+<li>通过Hive清洗、处理和计算原始数据；</li>
+<li>HIve清洗处理后的结果，如果是面向海量数据随机查询场景的可存入Hbase</li>
+<li>数据应用从HBase查询数据；
+<figure><a class="lightgallery" href="/images/Hive%e5%92%8cHBase%e4%b8%80%e8%88%ac%e6%95%b0%e6%8d%ae%e6%b5%81.png" title="数据流" data-thumbnail="/images/Hive和HBase一般数据流.png" data-sub-html="<h2>Hive和HBase一般数据流</h2><p>数据流</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/Hive%e5%92%8cHBase%e4%b8%80%e8%88%ac%e6%95%b0%e6%8d%ae%e6%b5%81.png"
+            data-srcset="/images/Hive%e5%92%8cHBase%e4%b8%80%e8%88%ac%e6%95%b0%e6%8d%ae%e6%b5%81.png, /images/Hive%e5%92%8cHBase%e4%b8%80%e8%88%ac%e6%95%b0%e6%8d%ae%e6%b5%81.png 1.5x, /images/Hive%e5%92%8cHBase%e4%b8%80%e8%88%ac%e6%95%b0%e6%8d%ae%e6%b5%81.png 2x"
+            data-sizes="auto"
+            alt="/images/Hive和HBase一般数据流.png" />
+    </a><figcaption class="image-caption">Hive和HBase一般数据流</figcaption>
+    </figure></li>
+</ol>
+</li>
+</ul>
 <h2 id="安装">安装</h2>
 <h3 id="环境描述">环境描述</h3>
 <hr>
@@ -453,7 +505,7 @@ hadoop启动后通过命令<code>jps</code>查看，有三个进程NameNode、Da
 <code>$HADOOP_HOME/bin/hadoop fs -rm /user/root/tb_dept/*</code><br>
 删除文件夹<br>
 <code>$HADOOP_HOME/bin/hadoop fs -rm -r /user/root/tb_dept</code></p>
-<h3 id="hive数据仓库">Hive数据仓库</h3>
+<h3 id="hive数据仓库工具">Hive数据仓库工具</h3>
 <h4 id="配置-1">配置</h4>
 <p>1.将/conf/hive-default.xml.template复制重命名为hive-site.xml<br>
 2.根据hive-site.xml中属性&lt;hive.metastore.warehouse.dir&gt;的值&lt;/user/hive/warehouse&gt;，让Hadoop新建hdfs目录<br>
@@ -658,7 +710,7 @@ export HIVE_HOME=/usr/local/hadoop/apache-hive-3.1.2
 </span><span class="se"></span>--connect jdbc:mysql://localhost:3306/db_test <span class="se">\
 </span><span class="se"></span>--username root <span class="se">\
 </span><span class="se"></span>--password <span class="m">123456</span> <span class="se">\
-</span><span class="se"></span>--table db_test <span class="se">\
+</span><span class="se"></span>--table tb_dept <span class="se">\
 </span><span class="se"></span>-m <span class="m">1</span>
 </code></pre></td></tr></table>
 </div>
