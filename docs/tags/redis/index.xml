@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>redis - 标签 - My Blog</title>
-        <link>https://hero851815.gitee.io/tags/redis/</link>
+        <link>http://localhost/tags/redis/</link>
         <description>redis - 标签 - My Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 07 Nov 2021 17:30:00 &#43;0800</lastBuildDate><atom:link href="https://hero851815.gitee.io/tags/redis/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 07 Nov 2021 17:30:00 &#43;0800</lastBuildDate><atom:link href="http://localhost/tags/redis/" rel="self" type="application/rss+xml" /><item>
     <title>Docker</title>
-    <link>https://hero851815.gitee.io/docker/</link>
+    <link>http://localhost/docker/</link>
     <pubDate>Sun, 07 Nov 2021 17:30:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hero851815.gitee.io/docker/</guid>
+    <guid>http://localhost/docker/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/featuredImage/docker-featured-image.png" referrerpolicy="no-referrer">
             </div>1 Docker安装 安装存储库 sudo yum install -y yum-utils device-mapper-persistent-data lvm2 若sudo命令无法执行则运行 yum -y install yum-utils 配置Docker源 yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo 查看仓库中Docker版本 yum list docker-ce --showduplicates | sort]]></description>

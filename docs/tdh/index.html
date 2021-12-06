@@ -8,19 +8,19 @@
         <title>TDH笔记 - My Blog</title><meta name="Description" content="Transwarp Data Hub"><meta property="og:title" content="TDH笔记" />
 <meta property="og:description" content="Transwarp Data Hub" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hero851815.gitee.io/tdh/" /><meta property="og:image" content="https://hero851815.gitee.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://localhost/tdh/" /><meta property="og:image" content="http://localhost/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-12-01T15:50:00+08:00" />
 <meta property="article:modified_time" content="2021-12-01T15:50:00+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://hero851815.gitee.io/logo.png"/>
+<meta name="twitter:image" content="http://localhost/logo.png"/>
 
 <meta name="twitter:title" content="TDH笔记"/>
 <meta name="twitter:description" content="Transwarp Data Hub"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hero851815.gitee.io/tdh/" /><link rel="prev" href="https://hero851815.gitee.io/sql%E4%BC%98%E5%8C%96%E6%8A%80%E5%B7%A7/" /><link rel="next" href="https://hero851815.gitee.io/git/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost/tdh/" /><link rel="prev" href="http://localhost/sql%E4%BC%98%E5%8C%96%E6%8A%80%E5%B7%A7/" /><link rel="next" href="http://localhost/git/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -28,9 +28,9 @@
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/hero851815.gitee.io\/tdh\/"
+            "@id": "http:\/\/localhost\/tdh\/"
         },"genre": "posts","keywords": "tdh","wordcount":  4258 ,
-        "url": "https:\/\/hero851815.gitee.io\/tdh\/","datePublished": "2021-12-01T15:50:00+08:00","dateModified": "2021-12-01T15:50:00+08:00","publisher": {
+        "url": "http:\/\/localhost\/tdh\/","datePublished": "2021-12-01T15:50:00+08:00","dateModified": "2021-12-01T15:50:00+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -334,20 +334,18 @@
 <blockquote>
 <p>Hive与HBase的区别和联系</p>
 <blockquote>
-<p>区别：
+<p>区别：<br>
 Hive：Hive是基于Hadoop的一个<strong>数据仓库工具</strong>，可以将结构化的数据文件映射为一张数据库表，并提供简单的sql查询功能。</p>
 <ul>
 <li>Hive本身不存储和计算数据，它完全依赖于HDFS和MapReduce，Hive中的表纯逻辑。hive需要用到hdfs存储文件，需要用到MapReduce计算框架。</li>
 <li>hive可以认为是map-reduce的一个包装。hive的意义就是把好写的hive的sql转换为复杂难写的map-reduce程序。
 HBase：HBase是Hadoop的<strong>数据库</strong>，一个分布式、可扩展、大数据的存储。</li>
-</ul>
-<ul>
 <li>hbase是物理表，不是逻辑表，提供一个超大的内存hash表，搜索引擎通过它来存储索引，方便查询操作</li>
 <li>hbase可以认为是hdfs的一个包装。他的本质是数据存储，是个NoSql数据库；hbase部署于hdfs之上，并且克服了hdfs在随机读写方面的缺点。</li>
 </ul>
 </blockquote>
 <blockquote>
-<p>联系：
+<p>联系：<br>
 Hbase和Hive在大数据架构中处在不同位置，Hbase主要解决实时数据查询问题，Hive主要解决数据处理和计算问题，一般是配合使用。</p>
 </blockquote>
 </blockquote>

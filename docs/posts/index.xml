@@ -1,81 +1,81 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>所有文章 - My Blog</title>
-        <link>https://hero851815.gitee.io/posts/</link>
+        <link>http://localhost/posts/</link>
         <description>所有文章 | My Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 01 Dec 2021 15:50:00 &#43;0800</lastBuildDate><atom:link href="https://hero851815.gitee.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 01 Dec 2021 15:50:00 &#43;0800</lastBuildDate><atom:link href="http://localhost/posts/" rel="self" type="application/rss+xml" /><item>
     <title>Linux 系统目录</title>
-    <link>https://hero851815.gitee.io/linxu%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95/</link>
+    <link>http://localhost/linxu%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95/</link>
     <pubDate>Sun, 07 Nov 2021 17:30:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hero851815.gitee.io/linxu%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95/</guid>
+    <guid>http://localhost/linxu%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/featuredImage/linux-featured-image.jpg" referrerpolicy="no-referrer">
             </div><p>Linux 系统目录说明</p>]]></description>
 </item><item>
     <title>Git 常用命令</title>
-    <link>https://hero851815.gitee.io/git/</link>
+    <link>http://localhost/git/</link>
     <pubDate>Fri, 12 Nov 2021 16:26:32 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hero851815.gitee.io/git/</guid>
+    <guid>http://localhost/git/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/featuredImage/git-featured-image.jpg" referrerpolicy="no-referrer">
             </div>新建代码库 1.项目目录 cd /user/mydev 2.创建空的本地仓库 git init 3.将项目所有文件添加到缓存 git add . 4.将缓存中的文件提交到git库 git commit -m &quot;添加此]]></description>
 </item><item>
     <title>TDH笔记</title>
-    <link>https://hero851815.gitee.io/tdh/</link>
+    <link>http://localhost/tdh/</link>
     <pubDate>Wed, 01 Dec 2021 15:50:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hero851815.gitee.io/tdh/</guid>
+    <guid>http://localhost/tdh/</guid>
     <description><![CDATA[信息 Transwarp Data Hub是基于Hadoop技术架构产生的大数据平台 TDH产品架构图 产品架构图产品架构图 " 产品架构图 基础概念 TDH服务 基于TDH6.0文]]></description>
 </item><item>
     <title>SQL优化技巧</title>
-    <link>https://hero851815.gitee.io/sql%E4%BC%98%E5%8C%96%E6%8A%80%E5%B7%A7/</link>
+    <link>http://localhost/sql%E4%BC%98%E5%8C%96%E6%8A%80%E5%B7%A7/</link>
     <pubDate>Tue, 23 Nov 2021 09:34:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hero851815.gitee.io/sql%E4%BC%98%E5%8C%96%E6%8A%80%E5%B7%A7/</guid>
+    <guid>http://localhost/sql%E4%BC%98%E5%8C%96%E6%8A%80%E5%B7%A7/</guid>
     <description><![CDATA[注意 文章内容来自网络，并非原创，加入个人博客方便阅读，举例多以mysql作为列子 sql优化sql优化 " sql优化 1 避免使用select * 反例]]></description>
 </item><item>
     <title>Java 学习笔记</title>
-    <link>https://hero851815.gitee.io/java/</link>
+    <link>http://localhost/java/</link>
     <pubDate>Thu, 18 Nov 2021 15:23:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hero851815.gitee.io/java/</guid>
+    <guid>http://localhost/java/</guid>
     <description><![CDATA[工程项目 Maven 右键工程创建Maven项目，编辑pom.xml加载第三方依赖 在resources目录下创建application.yml，建议用y]]></description>
 </item><item>
     <title>Anaconda 使用</title>
-    <link>https://hero851815.gitee.io/anaconda/</link>
+    <link>http://localhost/anaconda/</link>
     <pubDate>Fri, 12 Nov 2021 16:26:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hero851815.gitee.io/anaconda/</guid>
+    <guid>http://localhost/anaconda/</guid>
     <description><![CDATA[什么是Anaconda Anaconda (清华镜像) 就是可以便捷获取包且对包能够进行管理，同时对环境可以统一管理的发行版本。Anaconda包含了conda]]></description>
 </item><item>
     <title>Jupyter Notebook 使用</title>
-    <link>https://hero851815.gitee.io/jupyter_notebook/</link>
+    <link>http://localhost/jupyter_notebook/</link>
     <pubDate>Fri, 12 Nov 2021 16:26:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hero851815.gitee.io/jupyter_notebook/</guid>
+    <guid>http://localhost/jupyter_notebook/</guid>
     <description><![CDATA[什么是Jupyter Notebook Jupyter Notebook是基于网页的用于交互计算的应用程序。其可被应用于全过程计算：开发、文档编写、运行代码和展示结果。 文档]]></description>
 </item><item>
     <title>MYSQL</title>
-    <link>https://hero851815.gitee.io/mysql/</link>
+    <link>http://localhost/mysql/</link>
     <pubDate>Mon, 08 Nov 2021 11:19:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hero851815.gitee.io/mysql/</guid>
+    <guid>http://localhost/mysql/</guid>
     <description><![CDATA[系统event 查看系统event事件开关 方法一 select @@event_scheduler; 方法二 show variables like 'event_scheduler'; 开启系统event事件开关 方法1 set GLOBAL event_scheduler=ON; 方法2 set GLOBAL event_scheduler=1; 查看系统event事件 方法]]></description>
 </item><item>
     <title>SQL SERVER</title>
-    <link>https://hero851815.gitee.io/sqlserver/</link>
+    <link>http://localhost/sqlserver/</link>
     <pubDate>Mon, 08 Nov 2021 11:19:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hero851815.gitee.io/sqlserver/</guid>
+    <guid>http://localhost/sqlserver/</guid>
     <description><![CDATA[数据库备份 完整备份作业 1 2 3 4 5 6 7 8 9 USEMasterGOdeclare@strvarchar(100)set@str=&#39;D:\DataBase\FullBak-shi15-&#39;+replace(replace(replace(convert(varchar,getdate(),20),&#39;-&#39;,&#39;&#39;),&#39; &#39;,&#39;&#39;),&#39;:&#39;,&#39;&#39;)+&#39;.b]]></description>
 </item><item>
     <title>PHP</title>
-    <link>https://hero851815.gitee.io/php/</link>
+    <link>http://localhost/php/</link>
     <pubDate>Sun, 07 Nov 2021 17:30:32 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hero851815.gitee.io/php/</guid>
+    <guid>http://localhost/php/</guid>
     <description><![CDATA[设置rpm源 rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm 清理旧PHP yum -y remove php* 安装 安装EPEL yum存储库 yum install epel-release -y 安装Remi存储库 rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm 安装PHP73 yum install -y php73-php-fpm php73-php-cli php73-php-bcmath php73-php-gd php73-php-json php73-php-mbstring php73-php-mcrypt php73-php-mysqlnd]]></description>
 </item></channel>
 </rss>
