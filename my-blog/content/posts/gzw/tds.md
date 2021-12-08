@@ -8,7 +8,7 @@ authorLink: ""
 description: "Transwarp Data Studio"
 
 tags: ["tds"]
-categories: ["tds"]
+categories: ["gzw"]
 
 lightgallery: true
 hiddenFromHomePage: true

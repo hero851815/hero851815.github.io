@@ -8,7 +8,7 @@ authorLink: ""
 description: "Transwarp Data Hub"
 
 tags: ["tdh"]
-categories: ["tdh"]
+categories: ["gzw"]
 
 lightgallery: true
 hiddenFromHomePage: true
