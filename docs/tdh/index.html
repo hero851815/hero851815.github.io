@@ -8,19 +8,19 @@
         <title>TDH笔记 - My Blog</title><meta name="Description" content="Transwarp Data Hub"><meta property="og:title" content="TDH笔记" />
 <meta property="og:description" content="Transwarp Data Hub" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost/tdh/" /><meta property="og:image" content="http://localhost/logo.png"/><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://hero851815.gitee.io/tdh/" /><meta property="og:image" content="https://hero851815.gitee.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-12-01T15:50:00+08:00" />
-<meta property="article:modified_time" content="2021-12-01T15:50:00+08:00" />
+<meta property="article:modified_time" content="2021-12-07T13:08:00+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="http://localhost/logo.png"/>
+<meta name="twitter:image" content="https://hero851815.gitee.io/logo.png"/>
 
 <meta name="twitter:title" content="TDH笔记"/>
 <meta name="twitter:description" content="Transwarp Data Hub"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost/tdh/" /><link rel="prev" href="http://localhost/sql%E4%BC%98%E5%8C%96%E6%8A%80%E5%B7%A7/" /><link rel="next" href="http://localhost/git/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hero851815.gitee.io/tdh/" /><link rel="prev" href="https://hero851815.gitee.io/sql%E4%BC%98%E5%8C%96%E6%8A%80%E5%B7%A7/" /><link rel="next" href="https://hero851815.gitee.io/tds/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -28,9 +28,9 @@
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http:\/\/localhost\/tdh\/"
-        },"genre": "posts","keywords": "tdh","wordcount":  4258 ,
-        "url": "http:\/\/localhost\/tdh\/","datePublished": "2021-12-01T15:50:00+08:00","dateModified": "2021-12-01T15:50:00+08:00","publisher": {
+            "@id": "https:\/\/hero851815.gitee.io\/tdh\/"
+        },"genre": "posts","keywords": "tdh","wordcount":  4272 ,
+        "url": "https:\/\/hero851815.gitee.io\/tdh\/","datePublished": "2021-12-01T15:50:00+08:00","dateModified": "2021-12-07T13:08:00+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -106,7 +106,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">TDH笔记</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hero851815</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/tdh/"><i class="far fa-folder fa-fw"></i>tdh</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-12-01">2021-12-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4258 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-12-01">2021-12-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4272 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 9 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -514,8 +514,24 @@ hadoop启动后通过命令<code>jps</code>查看，有三个进程NameNode、Da
 <code>$HADOOP_HOME/bin/hadoop fs -mkdir -p /tmp/hive</code><br>
 <code>$HADOOP_HOME/bin/hadoop fs -chmod 777 /tmp/hive</code><br>
 5.新建本地目录可自定义 <code>/opt/hive/tmp</code>并赋予权限
-修改hive-site.xml中的临时目录，搜索目录将<code>${system:java.io.tmpdir}</code>替换为本地临时目录；将<code>${system:user.name}</code>替换为root<br>
-6.修改hive-site.xml中数据库相关配置</p>
+修改hive-site.xml中的临时目录，搜索目录将<code>${system:java.io.tmpdir}</code>替换为本地临时目录；将<code>${system:user.name}</code>替换为root</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;name&gt;</span>hive.querylog.location<span class="nt">&lt;/name&gt;</span>
+<span class="nt">&lt;value&gt;</span>${system:java.io.tmpdir}/${system:user.name}<span class="nt">&lt;/value&gt;</span>
+<span class="c">&lt;!-- 替换为 --&gt;</span>
+<span class="nt">&lt;name&gt;</span>hive.querylog.location<span class="nt">&lt;/name&gt;</span>
+<span class="nt">&lt;value&gt;</span>/tmp/hive/root<span class="nt">&lt;/value&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>6.修改hive-site.xml中数据库相关配置</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -553,7 +569,7 @@ hadoop启动后通过命令<code>jps</code>查看，有三个进程NameNode、Da
 
 <span class="c">&lt;!-- 修改数据库密码 --&gt;</span>
 <span class="nt">&lt;name&gt;</span>javax.jdo.option.ConnectionPassword<span class="nt">&lt;/name&gt;</span>
-<span class="nt">&lt;value&gt;</span>123456<span class="nt">&lt;/value&gt;</span>
+<span class="nt">&lt;value&gt;</span>mysql<span class="nt">&lt;/value&gt;</span>
 
 <span class="c">&lt;!-- 修改验证为false --&gt;</span>
 <span class="nt">&lt;name&gt;</span>hive.metastore.schema.verification<span class="nt">&lt;/name&gt;</span>
@@ -663,7 +679,7 @@ export HIVE_HOME=/usr/local/hadoop/apache-hive-3.1.2
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">sqoop list-databases <span class="se">\
 </span><span class="se"></span>--connect jdbc:mysql://localhost:3306 <span class="se">\
 </span><span class="se"></span>--username root <span class="se">\
-</span><span class="se"></span>--password <span class="m">123456</span>
+</span><span class="se"></span>--password mysql
 </code></pre></td></tr></table>
 </div>
 </div><h5 id="列出rdb中某数据库中的表">列出RDB中某数据库中的表</h5>
@@ -689,7 +705,7 @@ export HIVE_HOME=/usr/local/hadoop/apache-hive-3.1.2
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">sqoop list-tables <span class="se">\
 </span><span class="se"></span>--connect jdbc:mysql://localhost:3306/db_test <span class="se">\
 </span><span class="se"></span>--username root <span class="se">\
-</span><span class="se"></span>--password <span class="m">123456</span>
+</span><span class="se"></span>--password mysql
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="数据抽取">数据抽取</h4>
@@ -707,7 +723,7 @@ export HIVE_HOME=/usr/local/hadoop/apache-hive-3.1.2
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">sqoop import <span class="se">\
 </span><span class="se"></span>--connect jdbc:mysql://localhost:3306/db_test <span class="se">\
 </span><span class="se"></span>--username root <span class="se">\
-</span><span class="se"></span>--password <span class="m">123456</span> <span class="se">\
+</span><span class="se"></span>--password mysql <span class="se">\
 </span><span class="se"></span>--table tb_dept <span class="se">\
 </span><span class="se"></span>-m <span class="m">1</span>
 </code></pre></td></tr></table>
@@ -779,7 +795,7 @@ T+1模式下数据仓库会在每天固定时间点采集当天或者前一天�
 <blockquote>
 <p>例二：</p>
 <blockquote>
-<p>Mysql中的数据需要准实时的将数据同步写入到大数据平台中。这边有很多的工具都可以直接将mysql数据同步到hdfs中，这边推荐使用CDC或者MySQL Applier for Hadoop。</p>
+<p>Mysql中的数据需要准实时的将数据同步写入到大数据平台中。这边有很多的工具都可以直接将mysql数据同步到hdfs中，这边推荐使用CDC或者MySQL Applier for Hadoop。 </p>
 </blockquote>
 </blockquote>
 <h3 id="实时流处理">实时流处理</h3>
@@ -811,7 +827,7 @@ T+1模式下数据仓库会在每天固定时间点采集当天或者前一天�
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2021-12-01</span>
+                <span>更新于 2021-12-07</span>
             </div>
             <div class="post-info-license"></div>
         </div>
@@ -833,7 +849,7 @@ T+1模式下数据仓库会在每天固定时间点采集当天或者前一天�
     </div>
 
     <div class="post-nav"><a href="/sql%E4%BC%98%E5%8C%96%E6%8A%80%E5%B7%A7/" class="prev" rel="prev" title="SQL优化技巧"><i class="fas fa-angle-left fa-fw"></i>SQL优化技巧</a>
-            <a href="/git/" class="next" rel="next" title="Git 常用命令">Git 常用命令<i class="fas fa-angle-right fa-fw"></i></a></div>
+            <a href="/tds/" class="next" rel="next" title="TDS笔记">TDS笔记<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 </article></div>
             </main><footer class="footer">

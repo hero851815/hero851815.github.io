@@ -1,53 +1,53 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>linux - 标签 - My Blog</title>
-        <link>http://localhost/tags/linux/</link>
+        <link>https://hero851815.gitee.io/tags/linux/</link>
         <description>linux - 标签 - My Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 07 Nov 2021 17:30:32 &#43;0800</lastBuildDate><atom:link href="http://localhost/tags/linux/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 07 Nov 2021 17:30:32 &#43;0800</lastBuildDate><atom:link href="https://hero851815.gitee.io/tags/linux/" rel="self" type="application/rss+xml" /><item>
     <title>Linux 系统目录</title>
-    <link>http://localhost/linxu%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95/</link>
+    <link>https://hero851815.gitee.io/linxu%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95/</link>
     <pubDate>Sun, 07 Nov 2021 17:30:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://localhost/linxu%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95/</guid>
+    <guid>https://hero851815.gitee.io/linxu%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/featuredImage/linux-featured-image.jpg" referrerpolicy="no-referrer">
             </div><p>Linux 系统目录说明</p>]]></description>
 </item><item>
     <title>PHP</title>
-    <link>http://localhost/php/</link>
+    <link>https://hero851815.gitee.io/php/</link>
     <pubDate>Sun, 07 Nov 2021 17:30:32 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://localhost/php/</guid>
+    <guid>https://hero851815.gitee.io/php/</guid>
     <description><![CDATA[设置rpm源 rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm 清理旧PHP yum -y remove php* 安装 安装EPEL yum存储库 yum install epel-release -y 安装Remi存储库 rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm 安装PHP73 yum install -y php73-php-fpm php73-php-cli php73-php-bcmath php73-php-gd php73-php-json php73-php-mbstring php73-php-mcrypt php73-php-mysqlnd]]></description>
 </item><item>
     <title>Apache</title>
-    <link>http://localhost/apache/</link>
+    <link>https://hero851815.gitee.io/apache/</link>
     <pubDate>Sun, 07 Nov 2021 17:30:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://localhost/apache/</guid>
+    <guid>https://hero851815.gitee.io/apache/</guid>
     <description><![CDATA[设置rpm源 rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm rpm -Uvh https://mirrors.tuna.tsinghua.edu.cn/ius/ius-release-el7.rpm 安装 yum -y install httpd24u 查看 rpm -qa | grep httpd]]></description>
 </item><item>
     <title>Centos Samba配置</title>
-    <link>http://localhost/centos_samba/</link>
+    <link>https://hero851815.gitee.io/centos_samba/</link>
     <pubDate>Sun, 07 Nov 2021 17:30:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://localhost/centos_samba/</guid>
+    <guid>https://hero851815.gitee.io/centos_samba/</guid>
     <description><![CDATA[为什么使用samba 使用linux的ftp协议传输或scp命令拷贝速度都不尽如人意 步骤 安装smb服务 yum install samba samba-client samba-common -y 复制配置文件做备份 cp -a /etc/samba/smb.conf /etc/samba/smb.conf.bak 关]]></description>
 </item><item>
     <title>Docker</title>
-    <link>http://localhost/docker/</link>
+    <link>https://hero851815.gitee.io/docker/</link>
     <pubDate>Sun, 07 Nov 2021 17:30:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://localhost/docker/</guid>
+    <guid>https://hero851815.gitee.io/docker/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/featuredImage/docker-featured-image.png" referrerpolicy="no-referrer">
             </div>1 Docker安装 安装存储库 sudo yum install -y yum-utils device-mapper-persistent-data lvm2 若sudo命令无法执行则运行 yum -y install yum-utils 配置Docker源 yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo 查看仓库中Docker版本 yum list docker-ce --showduplicates | sort]]></description>
 </item><item>
     <title>Nginx</title>
-    <link>http://localhost/nginx/</link>
+    <link>https://hero851815.gitee.io/nginx/</link>
     <pubDate>Sun, 07 Nov 2021 17:30:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://localhost/nginx/</guid>
+    <guid>https://hero851815.gitee.io/nginx/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/featuredImage/nginx-featured-image.jpg" referrerpolicy="no-referrer">
             </div>安装扩展插件 apt-get update apt-get install vim 1 安装nginx(容器方式) 拉取镜像 docker pull nginx:1.21.1 查看本地镜像 docker image 首次创建ngixn容器 docker run -d --name nginx-web nginx 创建nginx目录 1 2 3 mkdir]]></description>

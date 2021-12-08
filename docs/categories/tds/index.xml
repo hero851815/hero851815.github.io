@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>tds - 分类 - My Blog</title>
+        <link>https://hero851815.gitee.io/categories/tds/</link>
+        <description>tds - 分类 - My Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 08 Dec 2021 09:00:00 &#43;0800</lastBuildDate><atom:link href="https://hero851815.gitee.io/categories/tds/" rel="self" type="application/rss+xml" /><item>
+    <title>TDS笔记</title>
+    <link>https://hero851815.gitee.io/tds/</link>
+    <pubDate>Wed, 08 Dec 2021 09:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hero851815.gitee.io/tds/</guid>
+    <description><![CDATA[基础概念 分层概念 ODS ODS层最好理解，基本上就是数据从源表拉过来，进行etl，比如mysql 映射到hive，那么到了hive里面就是ods层。]]></description>
+</item></channel>
+</rss>

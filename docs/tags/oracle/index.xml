@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>oracle - 标签 - My Blog</title>
-        <link>http://localhost/tags/oracle/</link>
+        <link>https://hero851815.gitee.io/tags/oracle/</link>
         <description>oracle - 标签 - My Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 07 Nov 2021 17:30:00 &#43;0800</lastBuildDate><atom:link href="http://localhost/tags/oracle/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 07 Nov 2021 17:30:00 &#43;0800</lastBuildDate><atom:link href="https://hero851815.gitee.io/tags/oracle/" rel="self" type="application/rss+xml" /><item>
     <title>Oracle</title>
-    <link>http://localhost/oracle/</link>
+    <link>https://hero851815.gitee.io/oracle/</link>
     <pubDate>Sun, 07 Nov 2021 17:30:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://localhost/oracle/</guid>
+    <guid>https://hero851815.gitee.io/oracle/</guid>
     <description><![CDATA[异常 查询死锁 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 selectl.session_idsid,s.serial#,l.locked_mode,l.oracle_username,s.user#,l.os_user_name,s.machine,s.terminal,a.sql_text,a.actionfromv$sqlareaa,v$sessions,v$locked_objectlwherel.session_id=s.sidands.prev_sql_addr=a.addressorderbysid,s.serial#;selecta.sid,spid,status,substr(a.program,1,40)prog,a.terminal,osuser,value/60/100valuefromv$sessiona,v$processb,v$sesstatcwherec.statistic#=12andc.sid=a.sidanda.paddr=b.addrorderbyvaluedesc;SELECTSID,SERIAL#,INST_ID,MODULE,STATUS,S.LAST_CALL_ETFROMgv$sessionSWHERES.USERNAMEISNOTNULLANDUPPER(S.PROGRAM)IN(&#39;TOAD.EXE&#39;,&#39;W3WP.EXE&#39;)--AND S.LAST_CALL_ET &gt;= 2 * 60*60 ANDS.STATUS=&#39;INACTIVE&#39;ORDERBYS.LAST_CALL_ETDESC 查询连接数和session 1 2 3 selectcount(*)fromv$process;selectcount(*)fromv$session;select*fromv$resource_limit; 查询表空间 1 2 3 4 5 6 7 SELECTsegment_name,segment_type,blocksFROMdba_segmentsWHEREsegment_name=&#39;TDB073&#39;;SELECTblocks,empty_blocks,num_rowsFROMuser_tablesWHEREtable_name=&#39;TDB073&#39;; 分]]></description>
 </item></channel>
 </rss>

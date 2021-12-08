@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>php - 分类 - My Blog</title>
-        <link>http://localhost/categories/php/</link>
+        <link>https://hero851815.gitee.io/categories/php/</link>
         <description>php - 分类 - My Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 07 Nov 2021 17:30:32 &#43;0800</lastBuildDate><atom:link href="http://localhost/categories/php/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 07 Nov 2021 17:30:32 &#43;0800</lastBuildDate><atom:link href="https://hero851815.gitee.io/categories/php/" rel="self" type="application/rss+xml" /><item>
     <title>PHP</title>
-    <link>http://localhost/php/</link>
+    <link>https://hero851815.gitee.io/php/</link>
     <pubDate>Sun, 07 Nov 2021 17:30:32 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://localhost/php/</guid>
+    <guid>https://hero851815.gitee.io/php/</guid>
     <description><![CDATA[设置rpm源 rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm 清理旧PHP yum -y remove php* 安装 安装EPEL yum存储库 yum install epel-release -y 安装Remi存储库 rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm 安装PHP73 yum install -y php73-php-fpm php73-php-cli php73-php-bcmath php73-php-gd php73-php-json php73-php-mbstring php73-php-mcrypt php73-php-mysqlnd]]></description>
 </item></channel>
 </rss>

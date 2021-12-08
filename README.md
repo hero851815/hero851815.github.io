@@ -20,6 +20,10 @@ Hugo +  Giteepages搭建的Blog,主题LoveIt
 `hugo -e production`  
 也可以使用`hugo -d C:/hugo/path/my-blog-public -e production`指定生成public目录路径
 
+5.  常用命令
++ 进入项目文件 `cd ./my-blog/`
++ 构建项目 `hugo -d /Users/ying/Documents/myProjectShare/github/hero851815.github.io/docs -e production`
+
 #### 基础配置
 
 1.  修改/path/my-blog/config/development/config.toml

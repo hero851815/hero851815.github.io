@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>samba - 标签 - My Blog</title>
-        <link>http://localhost/tags/samba/</link>
+        <link>https://hero851815.gitee.io/tags/samba/</link>
         <description>samba - 标签 - My Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 07 Nov 2021 17:30:00 &#43;0800</lastBuildDate><atom:link href="http://localhost/tags/samba/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 07 Nov 2021 17:30:00 &#43;0800</lastBuildDate><atom:link href="https://hero851815.gitee.io/tags/samba/" rel="self" type="application/rss+xml" /><item>
     <title>Centos Samba配置</title>
-    <link>http://localhost/centos_samba/</link>
+    <link>https://hero851815.gitee.io/centos_samba/</link>
     <pubDate>Sun, 07 Nov 2021 17:30:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://localhost/centos_samba/</guid>
+    <guid>https://hero851815.gitee.io/centos_samba/</guid>
     <description><![CDATA[为什么使用samba 使用linux的ftp协议传输或scp命令拷贝速度都不尽如人意 步骤 安装smb服务 yum install samba samba-client samba-common -y 复制配置文件做备份 cp -a /etc/samba/smb.conf /etc/samba/smb.conf.bak 关]]></description>
 </item></channel>
 </rss>
