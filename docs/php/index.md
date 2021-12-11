@@ -57,7 +57,7 @@ yum install -y php73-php-fpm php73-php-cli php73-php-bcmath php73-php-gd php73-p
 + 查看 php73-php-pecl-swoole4-4.4.15-1.el7.remi.x86_64 的安装路径：
   `rpm -ql php73-php-pecl-swoole4-4.4.15-1.el7.remi.x86_64`
 
-### 设置PHP
+## 设置PHP
 
 + 将php73链接到系统环境变量中，就可以使用 php -v
   `ln -s /opt/remi/php73/root/usr/bin/php /usr/bin/php`
