@@ -71,7 +71,7 @@
     <pubDate>Sun, 07 Nov 2021 17:30:32 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://hero851815.gitee.io/php/</guid>
-    <description><![CDATA[设置rpm源 rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm 清理旧PHP yum -y remove php* 安装 安装EPEL yum存储库 yum install epel-release -y 安装Remi存储库 rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm 安装PHP73 yum install -y php73-php-fpm php73-php-cli php73-php-bcmath php73-php-gd php73-php-json php73-php-mbstring php73-php-mcrypt php73-php-mysqlnd]]></description>
+    <description><![CDATA[设置rpm源 rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm 清理旧PHP yum -y remove php* 安装 安装EPEL yum存储库 yum install epel-release -y 安装Remi存储库 rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm 安装PHP73 1 yum install -y php73-php-fpm php73-php-cli php73-php-bcmath php73-php-gd php73-php-json php73-php-mbstring php73-php-mcrypt]]></description>
 </item><item>
     <title>Apache</title>
     <link>https://hero851815.gitee.io/apache/</link>
